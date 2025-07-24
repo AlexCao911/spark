@@ -1,0 +1,40 @@
+generate_video_clips_task:
+  description: >
+    Generate individual video clips from VEO3-optimized prompts with character consistency.
+    
+    You will receive:
+    - List of VideoPrompt objects with VEO3-optimized prompts
+    - Character reference images for visual consistency
+    
+    Your task is to:
+    1. Process each video prompt sequentially
+    2. Use VEO3 API to generate video clips with character reference images
+    3. Monitor generation status and handle any failures gracefully
+    4. Ensure visual consistency across all clips using character references
+    5. Validate that generated clips meet quality standards
+    6. Handle API rate limiting and retry logic
+    
+    Each generated clip should maintain character appearance consistency and meet the specified duration requirements.
+  expected_output: >
+    A list of video clip URLs or file paths, each corresponding to a successfully generated video clip from the input prompts.
+
+assemble_final_video_task:
+  description: >
+    Assemble individual video clips into a cohesive final video with professional quality.
+    
+    You will receive:
+    - List of video clip URLs or file paths
+    - Original video prompts for context and timing
+    
+    Your task is to:
+    1. Download or access all video clips
+    2. Concatenate clips in the correct sequential order
+    3. Apply smooth transitions between clips
+    4. Ensure consistent audio levels and quality
+    5. Convert to final MP4 format with appropriate compression
+    6. Validate the final video for quality and completeness
+    7. Handle any technical issues with individual clips
+    
+    The final video should be a seamless, professional-quality production ready for distribution.
+  expected_output: >
+    A file path to the final assembled video in MP4 format, ready for download or distribution.

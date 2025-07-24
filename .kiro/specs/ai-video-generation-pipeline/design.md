@@ -10,31 +10,32 @@ The Spark AI Video Generation Pipeline is designed as a multi-stage, AI-orchestr
 
 The system follows a three-phase pipeline architecture:
 
-1. **Interactive Ideation Phase**: GPT-4o powered chatbot for user interaction
-2. **Confirmation Phase**: User review and approval of generated content
-3. **Production Phase**: CrewAI orchestrated multi-agent video generation
+1. **Interactive Ideation Phase**: GPT-4o powered chatbot for user interaction and structured JSON output
+2. **Confirmation Phase**: User review and explicit approval of story outline and character visual designs
+3. **Production Phase**: CrewAI orchestrated multi-agent video generation with automated script development and video assembly
 
 ```mermaid
 graph TD
     A[User Input] --> B[Chatbot Interaction GPT-4o]
-    B --> C[Generate Story Outline & Complete Character Profiles with Images]
+    B --> C[Generate Story Outline & Character Images]
     C --> D[User Confirmation]
-    D --> E{Approved?}
-    E -->|No| C
-    E -->|Yes| F[Script Generation Crew]
-    F --> G[Video Production Crew]
-    G --> H[Final Video Output]
+    D --> E{Explicitly Approved?}
+    E -->|No| F[Regenerate Character Images]
+    F --> D
+    E -->|Yes| G[Script Generation Crew]
+    G --> H[Video Production Crew]
+    H --> I[Final Video Output]
     
     subgraph "Script Generation Crew"
-        F1[Story Expansion Agent]
-        F2[Shot Breakdown & Prompt Generation Agent]
-        F1 --> F2
+        G1[Story & Character Designer Agent]
+        G2[Storyboard & Prompt Engineer Agent]
+        G1 --> G2
     end
     
     subgraph "Video Production Crew"
-        G1[Video Clip Generator]
-        G2[Video Editor]
-        G1 --> G2
+        H1[Video Clip Generator Agent]
+        H2[Video Editor Agent]
+        H1 --> H2
     end
 ```
 
@@ -68,6 +69,8 @@ class VideoGenerationState(BaseModel):
 - `IdeaStructurer`: Converts natural language to structured JSON
 - `CharacterProfileGenerator`: Creates comprehensive character profiles with images
 - `PromptTemplates`: Standardized prompts for consistent interaction
+
+**Design Rationale**: The chatbot module serves as the primary user interface, transforming natural language input into structured data. GPT-4o was selected for its superior conversational abilities and structured output generation. The module generates both textual descriptions and visual character images during the ideation phase to enable immediate user confirmation before proceeding to production.
 
 **Interface**:
 ```python
@@ -393,3 +396,138 @@ The system uses well-crafted prompts to the Qwen3 model to achieve professional 
 - Temporary file cleanup
 - Connection pooling for API calls
 - Professional asset library management
+
+## Flask后端API包装
+
+### API接口设计
+
+整个AI视频生成管道将被包装在Flask后端应用中，提供RESTful API接口供外部调用。
+
+**核心组件**:
+
+```python
+class FlaskVideoAPI:
+    def __init__(self):
+        self.app = Flask(__name__)
+        self.video_pipeline = VideoGenerationPipeline()
+        self.setup_api_routes()
+    
+    def setup_api_routes(self):
+        # RESTful API端点
+        self.app.route('/api/chat', methods=['POST'])(self.chat_interaction)
+        self.app.route('/api/confirm', methods=['POST'])(self.confirm_content)
+        self.app.route('/api/regenerate-character', methods=['POST'])(self.regenerate_character)
+        self.app.route('/api/generate-video', methods=['POST'])(self.start_video_generation)
+        self.app.route('/api/status/<job_id>', methods=['GET'])(self.get_generation_status)
+        self.app.route('/api/download/<video_id>', methods=['GET'])(self.download_video)
+```
+
+### API端点详细设计
+
+```python
+# 聊天机器人交互API
+@app.route('/api/chat', methods=['POST'])
+def chat_interaction():
+    """
+    处理用户与聊天机器人的交互
+    输入: {"message": "用户输入", "session_id": "会话ID"}
+    输出: {"response": "机器人回复", "structured_data": {...}, "is_complete": bool}
+    """
+
+# 内容确认API  
+@app.route('/api/confirm', methods=['POST'])
+def confirm_content():
+    """
+    用户确认故事大纲和角色设计
+    输入: {"session_id": "会话ID", "approved": bool, "feedback": "反馈"}
+    输出: {"status": "confirmed/rejected", "next_step": "..."}
+    """
+
+# 角色重新生成API
+@app.route('/api/regenerate-character', methods=['POST'])
+def regenerate_character():
+    """
+    重新生成特定角色的图像
+    输入: {"character_name": "角色名", "feedback": "修改要求", "session_id": "会话ID"}
+    输出: {"character_image_url": "新图像URL", "status": "success/failed"}
+    """
+
+# 视频生成启动API
+@app.route('/api/generate-video', methods=['POST'])
+def start_video_generation():
+    """
+    启动视频生成流程
+    输入: {"session_id": "会话ID"}
+    输出: {"job_id": "任务ID", "status": "started", "estimated_time": 300}
+    """
+
+# 生成状态查询API
+@app.route('/api/status/<job_id>', methods=['GET'])
+def get_generation_status(job_id):
+    """
+    查询视频生成进度
+    输出: {"status": "processing/completed/failed", "progress": 0.75, "current_step": "..."}
+    """
+
+# 视频下载API
+@app.route('/api/download/<video_id>', methods=['GET'])
+def download_video(video_id):
+    """
+    下载生成的视频文件
+    输出: 视频文件流或下载链接
+    """
+```
+
+### 会话管理
+
+```python
+class APISessionManager:
+    def create_session(self) -> str
+    def store_session_data(self, session_id: str, data: dict)
+    def get_session_data(self, session_id: str) -> dict
+    def update_session_progress(self, session_id: str, step: str, progress: float)
+    def cleanup_expired_sessions(self)
+```
+
+### 错误处理和响应格式
+
+```python
+# 标准API响应格式
+class APIResponse:
+    success: bool
+    data: dict
+    message: str
+    error_code: Optional[str] = None
+
+# 错误处理
+@app.errorhandler(400)
+def bad_request(error):
+    return jsonify(APIResponse(success=False, message="请求参数错误", error_code="BAD_REQUEST"))
+
+@app.errorhandler(500)
+def internal_error(error):
+    return jsonify(APIResponse(success=False, message="服务器内部错误", error_code="INTERNAL_ERROR"))
+```
+
+### 部署配置
+
+```python
+class FlaskAPIConfig:
+    SECRET_KEY: str = os.environ.get('FLASK_SECRET_KEY')
+    MAX_CONTENT_LENGTH: int = 16 * 1024 * 1024  # 16MB最大请求大小
+    SESSION_TIMEOUT: int = 3600  # 1小时会话超时
+    
+    # API配置
+    API_VERSION: str = "v1"
+    RATE_LIMIT: str = "100 per hour"  # API调用频率限制
+    
+    # 生产环境设置
+    DEBUG: bool = False
+    TESTING: bool = False
+    
+    # 文件存储
+    GENERATED_VIDEOS_PATH: str = 'generated_videos'
+    TEMP_FILES_CLEANUP_INTERVAL: int = 3600  # 1小时
+```
+
+**设计理念**: Flask后端API设计专注于提供清晰、RESTful的接口，支持完整的视频生成工作流程。API设计遵循标准HTTP状态码和JSON响应格式，便于第三方集成和前端开发。会话管理确保多步骤工作流程的状态持久性，错误处理提供详细的错误信息和恢复建议。

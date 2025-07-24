@@ -1,0 +1,49 @@
+expand_story_task:
+  description: >
+    Expand the approved story outline into a complete, detailed narrative text.
+    
+    You will receive:
+    - Approved story outline with title, summary, and narrative text
+    - Character profiles with detailed descriptions and visual references
+    
+    Your task is to:
+    1. Take the approved narrative text and expand it into a full, detailed story
+    2. Maintain consistency with all character profiles and their established traits
+    3. Ensure the story flows naturally and maintains the original theme and mood
+    4. Keep the story within the estimated duration constraints
+    5. Create rich, descriptive text that will serve as the foundation for video production
+    
+    Output a complete detailed story text that preserves the user's original vision while adding depth and detail necessary for video production.
+  expected_output: >
+    A complete DetailedStory object containing:
+    - title: The story title
+    - full_story_text: Complete, detailed narrative text ready for shot breakdown
+    - total_duration: Estimated total duration in seconds
+
+break_into_shots_task:
+  description: >
+    Break the detailed story into individual shots and generate VEO3-optimized video prompts.
+    
+    You will receive:
+    - Complete detailed story text
+    - Character profiles with visual descriptions and reference images
+    
+    Your task is to:
+    1. Analyze the detailed story and break it into logical, filmable shots
+    2. For each shot, determine which characters are present and their actions
+    3. Generate VEO3-optimized prompts that include:
+       - Clear scene description
+       - Character appearance details from profiles
+       - Camera angles and movement
+       - Lighting and mood specifications
+       - Duration for each shot
+    4. Ensure visual consistency by referencing character images
+    5. Maintain narrative flow between shots
+    
+    Each prompt should be optimized for VEO3's capabilities and include character reference information for visual consistency.
+  expected_output: >
+    A list of VideoPrompt objects, each containing:
+    - shot_id: Sequential shot identifier
+    - veo3_prompt: Complete, optimized prompt for VEO3 video generation
+    - duration: Duration of the shot in seconds
+    - character_reference_images: List of character image URLs for consistency
