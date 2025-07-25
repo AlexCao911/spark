@@ -1,0 +1,17 @@
+{
+  "theme": "太空冒险",
+  "genre": "科幻",
+  "target_audience": "general",
+  "duration_preference": 60,
+  "basic_characters": [
+    "勇敢的宇航员",
+    "神秘的外星人"
+  ],
+  "plot_points": [
+    "主角与外星人相遇",
+    "他们决定合作",
+    "共同拯救地球"
+  ],
+  "visual_style": "cinematic",
+  "mood": " adventurous"
+}

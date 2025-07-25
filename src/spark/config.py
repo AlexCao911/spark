@@ -42,6 +42,12 @@ class Config(BaseSettings):
     MAX_CONCURRENT_GENERATIONS: int = 3
     TEMP_STORAGE_PATH: str = "/tmp/spark_videos"
     
+    # Storage Configuration
+    PROJECTS_STORAGE_PATH: str = "projects"  # Base path for project storage
+    ENABLE_AUTO_SAVE: bool = True  # Automatically save generated content
+    MAX_PROJECTS: int = 100  # Maximum number of projects to keep
+    AUTO_EXPORT_FORMAT: str = "json"  # Default export format
+    
     # Retry Configuration
     API_MAX_RETRIES: int = 3
     API_BASE_DELAY: float = 1.0
