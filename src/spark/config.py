@@ -26,15 +26,15 @@ class Config(BaseSettings):
     VIDEO_GENERATE_API_KEY: str = Field(default="", description="API key for video generation (VEO3)")
     
     # Model Configuration
-    CHATBOT_MODEL: str = "gpt-4o"  # For user interaction and idea structuring
-    IMAGE_GEN_MODEL: str = "dall-e-3"  # For character image generation
-    DETAILED_STORY_MODEL: str = "qwen3-turbo"  # For story expansion and prompt generation
+    CHATBOT_MODEL: str = "qwen-turbo-latest"  # For user interaction and idea structuring
+    IMAGE_GEN_MODEL: str = "wanx-v1"  # For character image generation using Wanx2.1-t2i-turbo
+    DETAILED_STORY_MODEL: str = "qwen-turbo-latest"  # For story expansion and prompt generation
     VIDEO_GENERATE_MODEL: str = "veo3-standard"  # For video clip generation
     
     # API Endpoints (configurable for different providers)
-    CHATBOT_API_ENDPOINT: str = "https://api.openai.com/v1"
-    IMAGE_GEN_API_ENDPOINT: str = "https://api.openai.com/v1"
-    DETAILED_STORY_API_ENDPOINT: str = "https://api.qwen.com/v1"
+    CHATBOT_API_ENDPOINT: str = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    IMAGE_GEN_API_ENDPOINT: str = "https://dashscope.aliyuncs.com/api/v1/services/aigc/text2image/image-synthesis"
+    DETAILED_STORY_API_ENDPOINT: str = "https://dashscope.aliyuncs.com/compatible-mode/v1"
     VIDEO_GENERATE_API_ENDPOINT: str = "https://api.veo3.com/v1"
     
     # Processing Configuration
@@ -101,9 +101,9 @@ class ModelManager:
     def __init__(self, config: Config):
         self.config = config
         self._available_models = {
-            "chatbot": ["gpt-4o", "gpt-4", "gpt-3.5-turbo"],
-            "image_generation": ["dall-e-3", "dall-e-2", "stable-diffusion"],
-            "detailed_story": ["qwen3-turbo", "qwen3", "gpt-4"],
+            "chatbot": ["qwen-turbo-latest", "qwen-plus", "qwen-max", "gpt-4o", "gpt-4"],
+            "image_generation": ["wanx-v1", "dall-e-3", "dall-e-2"],
+            "detailed_story": ["qwen-turbo-latest", "qwen-plus", "qwen-max", "gpt-4"],
             "video_generation": ["veo3-standard", "veo3-pro"]
         }
     

@@ -9,7 +9,7 @@ import time
 from typing import Any, Callable, Dict, Optional, Type
 from functools import wraps
 
-from spark.config import RetryConfig
+from .config import RetryConfig
 
 
 logger = logging.getLogger(__name__)
