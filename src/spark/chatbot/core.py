@@ -180,26 +180,63 @@ class ChatbotCore:
         """Analyze if the conversation contains enough information for a complete idea."""
         conversation_text = " ".join([msg["content"] for msg in self.conversation_manager.messages if msg["role"] == "user"])
         
-        # Simple keyword-based analysis (could be enhanced with NLP)
+        # Enhanced keyword-based analysis with Chinese and English support
         required_elements = {
-            "theme": ["theme", "about", "story", "concept", "idea"],
-            "genre": ["genre", "type", "style", "comedy", "drama", "action", "horror", "romance", "sci-fi", "fantasy"],
-            "characters": ["character", "protagonist", "hero", "villain", "person", "people"],
-            "plot": ["plot", "story", "happens", "beginning", "middle", "end", "conflict"],
-            "audience": ["audience", "viewers", "people", "kids", "adults", "teens"],
-            "duration": ["long", "short", "minutes", "seconds", "duration", "length"]
+            "theme": [
+                # English
+                "theme", "about", "story", "concept", "idea", "video", "film", "movie", "adventure", "space", "exploration",
+                # Chinese
+                "主题", "关于", "故事", "概念", "想法", "视频", "电影", "动画", "冒险", "太空", "探险", "制作", "创作"
+            ],
+            "genre": [
+                # English
+                "genre", "type", "style", "comedy", "drama", "action", "horror", "romance", "sci-fi", "fantasy", "animation", "documentary",
+                # Chinese
+                "类型", "风格", "喜剧", "剧情", "动作", "恐怖", "浪漫", "科幻", "奇幻", "动画", "纪录片", "科幻动画"
+            ],
+            "characters": [
+                # English
+                "character", "protagonist", "hero", "villain", "person", "people", "astronaut", "alien", "robot", "luna",
+                # Chinese
+                "角色", "主角", "人物", "英雄", "反派", "宇航员", "外星人", "机器人", "Luna", "女", "男", "主人公", "主要人物"
+            ],
+            "plot": [
+                # English
+                "plot", "story", "happens", "beginning", "middle", "end", "conflict", "rescue", "save", "help", "discover", "find", "planet",
+                # Chinese
+                "情节", "故事", "发生", "开始", "中间", "结束", "冲突", "拯救", "救援", "帮助", "发现", "找到", "星球", "家园", "需要"
+            ],
+            "audience": [
+                # English
+                "audience", "viewers", "people", "kids", "adults", "teens", "teenagers", "children", "youth",
+                # Chinese
+                "观众", "观看者", "人群", "孩子", "成人", "青少年", "儿童", "年轻人", "目标观众"
+            ],
+            "duration": [
+                # English
+                "long", "short", "minutes", "seconds", "duration", "length", "time", "minute", "second",
+                # Chinese
+                "长", "短", "分钟", "秒", "时长", "长度", "时间", "分", "秒钟", "左右"
+            ]
         }
         
         found_elements = []
         missing_elements = []
         
         for element, keywords in required_elements.items():
-            if any(keyword.lower() in conversation_text.lower() for keyword in keywords):
+            # Check if any keyword appears in the conversation
+            found = False
+            for keyword in keywords:
+                if keyword.lower() in conversation_text.lower():
+                    found = True
+                    break
+            
+            if found:
                 found_elements.append(element)
             else:
                 missing_elements.append(element)
         
-        # Consider complete if we have at least theme, characters, and some plot
+        # Consider complete if we have at least 4 elements including theme and characters
         is_complete = len(found_elements) >= 4 and "theme" in found_elements and "characters" in found_elements
         
         return {

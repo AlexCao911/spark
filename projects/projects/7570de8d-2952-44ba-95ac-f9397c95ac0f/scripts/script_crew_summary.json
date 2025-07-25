@@ -1,0 +1,14 @@
+{
+  "project_id": "7570de8d-2952-44ba-95ac-f9397c95ac0f",
+  "detailed_story": {
+    "title": "Ember's Awakening",
+    "duration": 60,
+    "word_count": 165
+  },
+  "video_prompts": {
+    "total_shots": 12,
+    "total_duration": 60,
+    "veo3_optimized": true
+  },
+  "status": "completed"
+}

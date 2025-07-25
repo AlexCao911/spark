@@ -1,7 +1,7 @@
 """
-Video Production Crew module.
+Maker Crew module for VEO3 video generation and assembly.
 """
 
-from .crew import VideoProductionCrew
+from .crew import MakerCrew
 
-__all__ = ["VideoProductionCrew"]
+__all__ = ["MakerCrew"]

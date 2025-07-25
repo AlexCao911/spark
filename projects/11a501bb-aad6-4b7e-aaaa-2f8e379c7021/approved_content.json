@@ -1,0 +1,48 @@
+{
+  "project_id": "11a501bb-aad6-4b7e-aaaa-2f8e379c7021",
+  "project_name": "世界模式：林澈的觉醒_项目",
+  "created_at": "2025-07-26T04:50:40.454186",
+  "user_idea": {
+    "theme": "世界模式的故事",
+    "genre": "科幻",
+    "target_audience": "科幻爱好者和社会反思群体",
+    "duration_preference": 30,
+    "basic_characters": [
+      "林澈"
+    ],
+    "plot_points": [
+      "故事围绕世界模式展开",
+      "引发观众深思",
+      "促使观众对世界产生思考"
+    ],
+    "visual_style": " cinematic",
+    "mood": "深思的"
+  },
+  "story_outline": {
+    "title": "世界模式：林澈的觉醒",
+    "summary": "林澈是一名普通程序员，偶然发现自己的世界其实是一个被模拟的程序。当他意识到自己只是另一个更高维度存在的实验对象时，他开始质疑现实的本质，并试图寻找逃离的方法。",
+    "narrative_text": "林澈每天在无尽的代码中工作，直到某天，他的电脑屏幕上突然闪过一段不属于任何已知程序的代码——它不断重复着一句话：‘你不是真实的。’起初他以为是系统错误，但很快，他注意到周围的世界开始出现细微裂痕：天空的颜色偶尔跳动，路人脚步声变得不连贯，甚至他自己镜中的倒影有时会延迟半秒。他意识到，这个世界并非自然存在，而是一个由未知智能设计的‘世界模式’。随着真相逼近，林澈开始记录这些异常，用手机拍摄、写日记、甚至尝试破解底层逻辑。他发现，每一次他试图理解这个世界的规则，系统就会轻微调整，仿佛在警告他：别太深入。最终，在一个暴雨夜，林澈站在城市边缘的高塔上，面对全息投影的‘管理员’——一个没有面孔的声音告诉他：‘你已经足够接近答案了，现在，选择是否继续探索，还是接受你所拥有的真实。’林澈沉默片刻，按下删除键，抹去了所有数据。他笑了，因为他终于明白：真正的自由，不是逃离世界，而是看清它的本质后依然热爱它。",
+    "estimated_duration": 60
+  },
+  "character_profiles": [
+    {
+      "name": "Character",
+      "role": "main",
+      "appearance": "林澈",
+      "personality": "性格鲜明，有自己的独特魅力",
+      "backstory": "在世界模式的故事的背景下成长，经历了许多挑战和考验。作为林澈，他们的过去塑造了现在的性格和能力，为即将到来的冒险做好了准备。",
+      "motivations": [
+        "寻找真相",
+        "保护家人",
+        "实现梦想"
+      ],
+      "relationships": {},
+      "image_url": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/4c/20250726/1412f369/249063b8-a3d5-44a0-9578-554c94397758-1.png?Expires=1753563039&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=0BYi4IGesNyF2kabwQT%2BWcoSDMk%3D",
+      "visual_consistency_tags": [
+        " cinematic"
+      ]
+    }
+  ],
+  "status": "approved",
+  "user_confirmed": true
+}

@@ -1,0 +1,20 @@
+{
+  "project_id": "60320249-473f-4214-892d-e99561c7da94",
+  "instructions": {
+    "script_crew": {
+      "input_files": {
+        "story_outline": "crew_input/story_outline.json",
+        "character_profiles": "crew_input/character_profiles.json"
+      },
+      "output_directory": "scripts",
+      "tasks": [
+        "Expand story outline into detailed narrative",
+        "Break story into individual shots",
+        "Generate VEO3-optimized prompts with character references"
+      ]
+    }
+  },
+  "story_summary": "A solitary painter finds peace in a sun-dappled garden, where his quiet presence and brushstrokes evoke the gentle spirit of Italy—touching the heart of a passing European traveler.",
+  "character_count": 2,
+  "estimated_duration": 20
+}

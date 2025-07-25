@@ -1,0 +1,65 @@
+{
+  "project_id": "7570de8d-2952-44ba-95ac-f9397c95ac0f",
+  "project_name": "Ember's Awakening_项目",
+  "created_at": "2025-07-26T04:59:28.877045",
+  "user_idea": {
+    "theme": "火山爆发的末日故事",
+    "genre": "科幻",
+    "target_audience": "科幻爱好者",
+    "duration_preference": 30,
+    "basic_characters": [
+      "主角",
+      "火山口里的活体生物"
+    ],
+    "plot_points": [
+      "主角发现了这个神秘生物体",
+      "火山爆发导致末日来临"
+    ],
+    "visual_style": " cinematic",
+    "mood": "神秘"
+  },
+  "story_outline": {
+    "title": "Ember's Awakening",
+    "summary": "A lone geologist discovers a living organism deep within an active volcano, only to trigger a catastrophic eruption that engulfs the world in fire and ash—revealing the creature as both destroyer and creator of life.",
+    "narrative_text": "Dr. Elara Myles, a brilliant but isolated volcanologist, descends into the heart of Mount Sirena, a dormant volcano now showing ominous signs of reawakening. Her instruments detect strange bioelectric pulses emanating from the magma chamber—a signal unlike anything she’s ever recorded. Curiosity overrides caution as she ventures deeper, guided by the flickering glow of a bioluminescent entity coiled around ancient stone: a living being made of molten rock and organic matter, pulsing like a heartbeat. It doesn’t attack—it watches, and in its gaze, Elara feels a terrifying connection, as if the mountain itself is alive.\n\nAs she records her discovery, seismic activity spikes. The creature begins to move—not with aggression, but with purpose—its form shifting, reshaping the chamber like a sculptor. Suddenly, the ground rumbles violently. The volcano erupts not just with lava, but with a storm of glowing embers and blackened air, signaling the onset of a global cataclysm. Elara barely escapes, watching from a distant ridge as the sky darkens and cities burn beneath a rain of fire. She realizes too late: the creature wasn’t a monster—it was a guardian, awakened by human intrusion, and now it’s cleansing the Earth of its corruption.\n\nIn the final moments, Elara stands alone in the ashes, clutching a data chip containing the creature’s neural patterns. The camera lingers on her face—part grief, part awe—as the screen fades to black. A whisper echoes through the wind: 'We woke you… now we’ll pay.' The last shot shows the creature rising from the crater, no longer hidden, but standing tall—a new god born from fire and fury.",
+    "estimated_duration": 60
+  },
+  "character_profiles": [
+    {
+      "name": "Character",
+      "role": "main",
+      "appearance": "主角",
+      "personality": "性格鲜明，有自己的独特魅力",
+      "backstory": "在火山爆发的末日故事的背景下成长，经历了许多挑战和考验。作为主角，他们的过去塑造了现在的性格和能力，为即将到来的冒险做好了准备。",
+      "motivations": [
+        "寻找真相",
+        "保护家人",
+        "实现梦想"
+      ],
+      "relationships": {},
+      "image_url": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/c7/20250726/1412f369/ddd49a58-9f42-4838-be2a-d67cd65994e3-1.png?Expires=1753563532&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=C6YQDxyRh6KewTwJc55qjAME5uM%3D",
+      "visual_consistency_tags": [
+        " cinematic"
+      ]
+    },
+    {
+      "name": "Hero",
+      "role": "supporting",
+      "appearance": "火山口里的活体生物",
+      "personality": "性格鲜明，有自己的独特魅力",
+      "backstory": "在火山爆发的末日故事的背景下成长，经历了许多挑战和考验。作为火山口里的活体生物，他们的过去塑造了现在的性格和能力，为即将到来的冒险做好了准备。",
+      "motivations": [
+        "寻找真相",
+        "保护家人",
+        "实现梦想"
+      ],
+      "relationships": {},
+      "image_url": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/25/20250726/1412f369/716a08b1-f05e-4224-8960-b7ac1319f48e-1.png?Expires=1753563567&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=Vd3dLMEQNfQlDbFZA4og%2B46vPpM%3D",
+      "visual_consistency_tags": [
+        " cinematic"
+      ]
+    }
+  ],
+  "status": "approved",
+  "user_confirmed": true
+}

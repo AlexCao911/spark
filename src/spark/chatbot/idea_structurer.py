@@ -54,7 +54,7 @@ Create a story outline with the following JSON structure:
     "title": "compelling title for the video",
     "summary": "brief 2-3 sentence summary of the story",
     "narrative_text": "detailed narrative description that tells the complete story in a coherent, engaging way (3-5 paragraphs)",
-    "estimated_duration": 60
+    "estimated_duration": {duration_preference}
 }}
 
 User's video idea:
@@ -68,6 +68,8 @@ Target Audience: {target_audience}
 Duration Preference: {duration_preference} seconds
 
 Create an engaging story that incorporates all these elements. The narrative_text should be a complete, coherent story that could be used as the basis for video production.
+
+IMPORTANT: The estimated_duration MUST exactly match the Duration Preference of {duration_preference} seconds. Do not change this value.
 
 Return ONLY the JSON object, no additional text.
 """

@@ -1,0 +1,110 @@
+[
+  {
+    "shot_id": 1,
+    "veo3_prompt": "穿着沾有实验痕迹白大褂的Alex凝视显微镜，幽蓝冷光下瞳孔倒映微弱蓝光，近景特写，浅景深突出面部细节，冷调氛围",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/6a/20250726/1412f369/a89fc3b2-da7c-42bd-9a1e-c33c878adcc0-1.png?Expires=1753564884&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=7C0tZAz4oKGw5n0EbzjdnNLMGsY%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/e3/20250726/1412f369/37860258-6300-4cc7-830b-38eb3c63552a-1.png?Expires=1753564912&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zYoTCIgfaBeOImqtc2f5kg0YLq8%3D"
+    ]
+  },
+  {
+    "shot_id": 2,
+    "veo3_prompt": "实验室走廊尽头老旧白炽灯忽明忽暗，金属铭牌“Project Phoenix”锈迹斑斑，远景拍摄，低频嗡鸣与心跳声交织",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/6a/20250726/1412f369/a89fc3b2-da7c-42bd-9a1e-c33c878adcc0-1.png?Expires=1753564884&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=7C0tZAz4oKGw5n0EbzjdnNLMGsY%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/e3/20250726/1412f369/37860258-6300-4cc7-830b-38eb3c63552a-1.png?Expires=1753564912&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zYoTCIgfaBeOImqtc2f5kg0YLq8%3D"
+    ]
+  },
+  {
+    "shot_id": 3,
+    "veo3_prompt": "警报红光炸裂空间，乳白色雾气如活物缠绕管道蔓延，慢动作捕捉液体飞溅瞬间，中景镜头，高对比度光影",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/6a/20250726/1412f369/a89fc3b2-da7c-42bd-9a1e-c33c878adcc0-1.png?Expires=1753564884&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=7C0tZAz4oKGw5n0EbzjdnNLMGsY%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/e3/20250726/1412f369/37860258-6300-4cc7-830b-38eb3c63552a-1.png?Expires=1753564912&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zYoTCIgfaBeOImqtc2f5kg0YLq8%3D"
+    ]
+  },
+  {
+    "shot_id": 4,
+    "veo3_prompt": "黑猫从排水管窜出，爪子划过地面留下荧光痕迹，第一人称视角拍摄，猫眼骤亮绿光，暗调环境突显神秘感",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/6a/20250726/1412f369/a89fc3b2-da7c-42bd-9a1e-c33c878adcc0-1.png?Expires=1753564884&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=7C0tZAz4oKGw5n0EbzjdnNLMGsY%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/e3/20250726/1412f369/37860258-6300-4cc7-830b-38eb3c63552a-1.png?Expires=1753564912&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zYoTCIgfaBeOImqtc2f5kg0YLq8%3D"
+    ]
+  },
+  {
+    "shot_id": 5,
+    "veo3_prompt": "老鼠用前爪打开便利店门锁，精准叼走一把刀，俯视镜头拍摄，灰暗色调中透出紫金色滤镜，动物视角增强代入",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/6a/20250726/1412f369/a89fc3b2-da7c-42bd-9a1e-c33c878adcc0-1.png?Expires=1753564884&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=7C0tZAz4oKGw5n0EbzjdnNLMGsY%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/e3/20250726/1412f369/37860258-6300-4cc7-830b-38eb3c63552a-1.png?Expires=1753564912&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zYoTCIgfaBeOImqtc2f5kg0YLq8%3D"
+    ]
+  },
+  {
+    "shot_id": 6,
+    "veo3_prompt": "流浪猫蹲在废弃工地中央注视砍树男人，扑上去咬住脚踝却未致命，中景拍摄，背景渐变暖金，情绪张力十足",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/6a/20250726/1412f369/a89fc3b2-da7c-42bd-9a1e-c33c878adcc0-1.png?Expires=1753564884&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=7C0tZAz4oKGw5n0EbzjdnNLMGsY%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/e3/20250726/1412f369/37860258-6300-4cc7-830b-38eb3c63552a-1.png?Expires=1753564912&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zYoTCIgfaBeOImqtc2f5kg0YLq8%3D"
+    ]
+  },
+  {
+    "shot_id": 7,
+    "veo3_prompt": "新闻播报画外音：“多地出现非攻击性野兽袭击事件”，快速切换画面，手持镜头模拟真实感，色调偏冷蓝",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/6a/20250726/1412f369/a89fc3b2-da7c-42bd-9a1e-c33c878adcc0-1.png?Expires=1753564884&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=7C0tZAz4oKGw5n0EbzjdnNLMGsY%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/e3/20250726/1412f369/37860258-6300-4cc7-830b-38eb3c63552a-1.png?Expires=1753564912&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zYoTCIgfaBeOImqtc2f5kg0YLq8%3D"
+    ]
+  },
+  {
+    "shot_id": 8,
+    "veo3_prompt": "Elara冲进监控室颤抖手指滑动数据流，发现所有变异行为指向伤害自然者，分裂屏对比过去演讲与现在血腥报告",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/6a/20250726/1412f369/a89fc3b2-da7c-42bd-9a1e-c33c878adcc0-1.png?Expires=1753564884&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=7C0tZAz4oKGw5n0EbzjdnNLMGsY%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/e3/20250726/1412f369/37860258-6300-4cc7-830b-38eb3c63552a-1.png?Expires=1753564912&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zYoTCIgfaBeOImqtc2f5kg0YLq8%3D"
+    ]
+  },
+  {
+    "shot_id": 9,
+    "veo3_prompt": "她眼泪滑落却不落下，仿佛被无形力量冻结，脸部表情扭曲，轻微晃动镜头模拟心理崩溃，冷蓝主色强化孤独感",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/6a/20250726/1412f369/a89fc3b2-da7c-42bd-9a1e-c33c878adcc0-1.png?Expires=1753564884&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=7C0tZAz4oKGw5n0EbzjdnNLMGsY%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/e3/20250726/1412f369/37860258-6300-4cc7-830b-38eb3c63552a-1.png?Expires=1753564912&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zYoTCIgfaBeOImqtc2f5kg0YLq8%3D"
+    ]
+  },
+  {
+    "shot_id": 10,
+    "veo3_prompt": "Zara缓步走近Elara，半透明皮肤下脉动蓝色神经网络，轻轻放下一朵枯萎花在她脚边，特写镜头，涟漪波纹眼神回应",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/6a/20250726/1412f369/a89fc3b2-da7c-42bd-9a1e-c33c878adcc0-1.png?Expires=1753564884&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=7C0tZAz4oKGw5n0EbzjdnNLMGsY%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/e3/20250726/1412f369/37860258-6300-4cc7-830b-38eb3c63552a-1.png?Expires=1753564912&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zYoTCIgfaBeOImqtc2f5kg0YLq8%3D"
+    ]
+  },
+  {
+    "shot_id": 11,
+    "veo3_prompt": "Elara举起通讯器直播全球观众，声音哽咽：“这不是病毒……这是进化。”中景拍摄，阳光透过窗户洒在脸上，希望感浮现",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/6a/20250726/1412f369/a89fc3b2-da7c-42bd-9a1e-c33c878adcc0-1.png?Expires=1753564884&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=7C0tZAz4oKGw5n0EbzjdnNLMGsY%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/e3/20250726/1412f369/37860258-6300-4cc7-830b-38eb3c63552a-1.png?Expires=1753564912&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zYoTCIgfaBeOImqtc2f5kg0YLq8%3D"
+    ]
+  },
+  {
+    "shot_id": 12,
+    "veo3_prompt": "变异狐狸将野花放在公司高管墓碑前，银色毛发泛神圣光环，俯拍镜头定格花朵与墓碑之间，柔和光线营造救赎意味",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/6a/20250726/1412f369/a89fc3b2-da7c-42bd-9a1e-c33c878adcc0-1.png?Expires=1753564884&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=7C0tZAz4oKGw5n0EbzjdnNLMGsY%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/e3/20250726/1412f369/37860258-6300-4cc7-830b-38eb3c63552a-1.png?Expires=1753564912&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zYoTCIgfaBeOImqtc2f5kg0YLq8%3D"
+    ]
+  }
+]

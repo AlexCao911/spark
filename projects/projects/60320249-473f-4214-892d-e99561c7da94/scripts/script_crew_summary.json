@@ -1,0 +1,14 @@
+{
+  "project_id": "60320249-473f-4214-892d-e99561c7da94",
+  "detailed_story": {
+    "title": "The Warmth of the Garden",
+    "duration": 20,
+    "word_count": 146
+  },
+  "video_prompts": {
+    "total_shots": 4,
+    "total_duration": 20,
+    "veo3_optimized": true
+  },
+  "status": "completed"
+}

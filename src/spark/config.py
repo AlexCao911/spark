@@ -47,105 +47,98 @@ class Config(BaseSettings):
     ENABLE_AUTO_SAVE: bool = True  # Automatically save generated content
     MAX_PROJECTS: int = 100  # Maximum number of projects to keep
     AUTO_EXPORT_FORMAT: str = "json"  # Default export format
-    
+
     # Retry Configuration
-    API_MAX_RETRIES: int = 3
-    API_BASE_DELAY: float = 1.0
-    API_MAX_DELAY: float = 60.0
-    API_EXPONENTIAL_BASE: float = 2.0
-    
-    # Content Safety
-    ENABLE_CONTENT_FILTERING: bool = True
-    MAX_CHARACTERS_PER_STORY: int = 10
-    MAX_SHOTS_PER_VIDEO: int = 50
-    
-    # Development Configuration
-    DEBUG_MODE: bool = False
-    LOG_LEVEL: str = "INFO"
-    ENABLE_CACHING: bool = True
-    CACHE_TTL: int = 3600  # seconds
+    retry_config: RetryConfig = Field(default_factory=RetryConfig)
     
     class Config:
         env_file = ".env"
-        env_file_encoding = "utf-8"
         case_sensitive = True
-        extra = "ignore"  # Ignore extra fields from environment
-    
-    @property
-    def retry_config(self) -> RetryConfig:
-        """Get retry configuration object."""
-        return RetryConfig(
-            max_retries=self.API_MAX_RETRIES,
-            base_delay=self.API_BASE_DELAY,
-            max_delay=self.API_MAX_DELAY,
-            exponential_base=self.API_EXPONENTIAL_BASE
-        )
-    
-    def validate_api_keys(self) -> Dict[str, bool]:
-        """Validate that required API keys are present."""
-        keys_status = {
-            "chatbot": bool(self.CHATBOT_API_KEY),
-            "image_generation": bool(self.IMAGE_GEN_API_KEY),
-            "detailed_story": bool(self.DETAILED_STORY_API_KEY),
-            "video_generation": bool(self.VIDEO_GENERATE_API_KEY)
-        }
-        return keys_status
+        extra = "ignore"  # Ignore extra environment variables
     
     def get_missing_api_keys(self) -> List[str]:
-        """Get list of missing API keys."""
-        validation = self.validate_api_keys()
-        return [key for key, is_valid in validation.items() if not is_valid]
+        """Check which API keys are missing."""
+        missing = []
+        if not self.CHATBOT_API_KEY:
+            missing.append("CHATBOT_API_KEY")
+        if not self.IMAGE_GEN_API_KEY:
+            missing.append("IMAGE_GEN_API_KEY") 
+        if not self.DETAILED_STORY_API_KEY:
+            missing.append("DETAILED_STORY_API_KEY")
+        if not self.VIDEO_GENERATE_API_KEY:
+            missing.append("VIDEO_GENERATE_API_KEY")
+        return missing
     
-    def ensure_temp_directory(self) -> None:
-        """Ensure temporary storage directory exists."""
-        os.makedirs(self.TEMP_STORAGE_PATH, exist_ok=True)
+    def validate_configuration(self) -> Dict[str, bool]:
+        """Validate that all required configuration is present."""
+        validation = {
+            "api_keys_present": len(self.get_missing_api_keys()) == 0,
+            "endpoints_configured": all([
+                self.CHATBOT_API_ENDPOINT,
+                self.IMAGE_GEN_API_ENDPOINT,
+                self.DETAILED_STORY_API_ENDPOINT,
+                self.VIDEO_GENERATE_API_ENDPOINT
+            ]),
+            "models_configured": all([
+                self.CHATBOT_MODEL,
+                self.IMAGE_GEN_MODEL,
+                self.DETAILED_STORY_MODEL,
+                self.VIDEO_GENERATE_MODEL
+            ])
+        }
+        validation["all_valid"] = all(validation.values())
+        return validation
+    
+    def get_llm_for_crew(self):
+        """Get LLM configuration for CrewAI."""
+        try:
+            # Import here to avoid circular imports
+            from langchain_openai import ChatOpenAI
+            
+            # Use DETAILED_STORY_API_KEY for crew operations since it's for Qwen
+            return ChatOpenAI(
+                model=self.DETAILED_STORY_MODEL,
+                api_key=self.DETAILED_STORY_API_KEY,
+                base_url=self.DETAILED_STORY_API_ENDPOINT,
+                temperature=0.7,
+                max_tokens=2000
+            )
+        except ImportError:
+            # Fallback if langchain_openai is not available
+            print("Warning: langchain_openai not available, using mock LLM for crew")
+            return None
 
 
 class ModelManager:
-    """Manager for dynamic model switching and health checks."""
+    """Manages model switching and configuration."""
     
     def __init__(self, config: Config):
         self.config = config
-        self._available_models = {
-            "chatbot": ["qwen-turbo-latest", "qwen-plus", "qwen-max", "gpt-4o", "gpt-4"],
-            "image_generation": ["wanx-v1", "dall-e-3", "dall-e-2"],
-            "detailed_story": ["qwen-turbo-latest", "qwen-plus", "qwen-max", "gpt-4"],
-            "video_generation": ["veo3-standard", "veo3-pro"]
+        self.active_models = {
+            "chatbot": config.CHATBOT_MODEL,
+            "image_gen": config.IMAGE_GEN_MODEL,
+            "detailed_story": config.DETAILED_STORY_MODEL,
+            "video_generate": config.VIDEO_GENERATE_MODEL
         }
     
-    def get_available_models(self, model_type: str) -> List[str]:
-        """Get list of available models for a given type."""
-        return self._available_models.get(model_type, [])
+    def switch_model(self, service: str, model_name: str) -> bool:
+        """Switch to a different model for a service."""
+        if service in self.active_models:
+            self.active_models[service] = model_name
+            return True
+        return False
     
-    def switch_model(self, model_type: str, new_model: str) -> bool:
-        """Switch to a different model for a given type."""
-        available = self.get_available_models(model_type)
-        if new_model not in available:
-            return False
-        
-        # Update configuration based on model type
-        if model_type == "chatbot":
-            self.config.CHATBOT_MODEL = new_model
-        elif model_type == "image_generation":
-            self.config.IMAGE_GEN_MODEL = new_model
-        elif model_type == "detailed_story":
-            self.config.DETAILED_STORY_MODEL = new_model
-        elif model_type == "video_generation":
-            self.config.VIDEO_GENERATE_MODEL = new_model
-        else:
-            return False
-        
-        return True
+    def get_active_model(self, service: str) -> str:
+        """Get the currently active model for a service."""
+        return self.active_models.get(service, "unknown")
     
-    def health_check_models(self) -> Dict[str, bool]:
-        """Perform health checks on configured models."""
-        # This would implement actual health checks in a real system
-        # For now, return basic validation
+    def list_available_models(self) -> Dict[str, List[str]]:
+        """List available models for each service."""
         return {
-            "chatbot": bool(self.config.CHATBOT_API_KEY),
-            "image_generation": bool(self.config.IMAGE_GEN_API_KEY),
-            "detailed_story": bool(self.config.DETAILED_STORY_API_KEY),
-            "video_generation": bool(self.config.VIDEO_GENERATE_API_KEY)
+            "chatbot": ["qwen-turbo-latest", "gpt-4o", "claude-3-opus"],
+            "image_gen": ["wanx-v1", "dalle-3", "midjourney"],
+            "detailed_story": ["qwen-turbo-latest", "gpt-4o"],
+            "video_generate": ["veo3-standard", "veo3-premium", "runway-ml"]
         }
 
 

@@ -1,0 +1,66 @@
+{
+  "project_id": "c1c61a55-91c4-4084-957c-89ab4c9e529f",
+  "project_name": "The Silent Mutation_项目",
+  "created_at": "2025-07-26T05:21:56.557976",
+  "user_idea": {
+    "theme": "实验室基因泄露导致变异的故事",
+    "genre": "sci-fi",
+    "target_audience": "general",
+    "duration_preference": 30,
+    "basic_characters": [
+      "疯狂科学家",
+      "细菌与动物变体"
+    ],
+    "plot_points": [
+      "实验室基因泄露",
+      "变体出现",
+      "反思科技伦理"
+    ],
+    "visual_style": "cinematic",
+    "mood": "mysterious"
+  },
+  "story_outline": {
+    "title": "The Silent Mutation",
+    "summary": "When a rogue genetic experiment leaks into the city, a once-quiet lab becomes the birthplace of terrifying new lifeforms—forcing a scientist to confront the consequences of playing god.",
+    "narrative_text": "In a secluded underground lab, Dr. Elara Voss works late, her obsession with creating resilient organisms for medical breakthroughs blinding her to the risks. One night, a containment breach releases a genetically engineered bacterium designed to enhance cellular regeneration. Within hours, stray cats and rats begin mutating—growing razor-sharp claws, glowing eyes, and an unnatural intelligence. The city remains unaware at first, but soon reports flood in: animals acting with purpose, attacking only those who’ve harmed nature. Dr. Voss discovers the truth too late—the bacteria isn’t just altering biology; it’s evolving empathy, targeting the unethical. As the mutated creatures gather outside her lab, she realizes they’re not monsters—they’re a warning. In a final act of defiance, she broadcasts her findings live, urging humanity to reconsider its relationship with science and the natural world. The screen fades to black as the camera pans over the first true sign of peace: a mutated fox gently placing a flower on a dead human’s grave.",
+    "estimated_duration": 60
+  },
+  "character_profiles": [
+    {
+      "name": "Alex",
+      "role": "main",
+      "appearance": "疯狂科学家",
+      "personality": "理性、好奇，对科技和未知充满探索欲",
+      "backstory": "在实验室基因泄露导致变异的故事的背景下成长，经历了许多挑战和考验。作为疯狂科学家，他们的过去塑造了现在的性格和能力，为即将到来的冒险做好了准备。",
+      "motivations": [
+        "寻找真相",
+        "保护家人",
+        "实现梦想"
+      ],
+      "relationships": {},
+      "image_url": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/6a/20250726/1412f369/a89fc3b2-da7c-42bd-9a1e-c33c878adcc0-1.png?Expires=1753564884&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=7C0tZAz4oKGw5n0EbzjdnNLMGsY%3D",
+      "visual_consistency_tags": [
+        "cinematic"
+      ]
+    },
+    {
+      "name": "Zara",
+      "role": "supporting",
+      "appearance": "细菌与动物变体",
+      "personality": "理性、好奇，对科技和未知充满探索欲",
+      "backstory": "在实验室基因泄露导致变异的故事的背景下成长，经历了许多挑战和考验。作为细菌与动物变体，他们的过去塑造了现在的性格和能力，为即将到来的冒险做好了准备。",
+      "motivations": [
+        "寻找真相",
+        "保护家人",
+        "实现梦想"
+      ],
+      "relationships": {},
+      "image_url": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/e3/20250726/1412f369/37860258-6300-4cc7-830b-38eb3c63552a-1.png?Expires=1753564912&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zYoTCIgfaBeOImqtc2f5kg0YLq8%3D",
+      "visual_consistency_tags": [
+        "cinematic"
+      ]
+    }
+  ],
+  "status": "approved",
+  "user_confirmed": true
+}

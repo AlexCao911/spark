@@ -1,49 +1,78 @@
 expand_story_task:
   description: >
-    Expand the approved story outline into a complete, detailed narrative text.
-    
-    You will receive:
-    - Approved story outline with title, summary, and narrative text
-    - Character profiles with detailed descriptions and visual references
-    
-    Your task is to:
-    1. Take the approved narrative text and expand it into a full, detailed story
-    2. Maintain consistency with all character profiles and their established traits
-    3. Ensure the story flows naturally and maintains the original theme and mood
-    4. Keep the story within the estimated duration constraints
-    5. Create rich, descriptive text that will serve as the foundation for video production
-    
-    Output a complete detailed story text that preserves the user's original vision while adding depth and detail necessary for video production.
-  expected_output: >
-    A complete DetailedStory object containing:
-    - title: The story title
-    - full_story_text: Complete, detailed narrative text ready for shot breakdown
-    - total_duration: Estimated total duration in seconds
+    将以下故事大纲扩展为完整、详细、富有视觉感的叙述文本：
 
-break_into_shots_task:
-  description: >
-    Break the detailed story into individual shots and generate VEO3-optimized video prompts.
-    
-    You will receive:
-    - Complete detailed story text
-    - Character profiles with visual descriptions and reference images
-    
-    Your task is to:
-    1. Analyze the detailed story and break it into logical, filmable shots
-    2. For each shot, determine which characters are present and their actions
-    3. Generate VEO3-optimized prompts that include:
-       - Clear scene description
-       - Character appearance details from profiles
-       - Camera angles and movement
-       - Lighting and mood specifications
-       - Duration for each shot
-    4. Ensure visual consistency by referencing character images
-    5. Maintain narrative flow between shots
-    
-    Each prompt should be optimized for VEO3's capabilities and include character reference information for visual consistency.
+    **故事信息：**
+    - 标题：{story_title}
+    - 摘要：{story_summary}
+    - 原始叙述：{story_narrative}
+    - 目标时长：{target_duration}秒
+
+    **角色信息：**
+    {characters}
+
+    **扩展要求：**
+    1. 保持原始故事的核心情节和所有角色特征不变
+    2. 大幅扩展场景描述，添加丰富的视觉细节和环境氛围
+    3. 增加角色的动作、表情和情感描述
+    4. 包含对话内容（如适用），但重点关注视觉叙述
+    5. 确保故事节奏适合分解为{num_shots}个5秒视频片段
+    6. 添加电影化的描述元素：镜头感、光影效果、色彩氛围
+    7. 保持叙述的连贯性和逻辑性
+
+    请输出一个完整、详细、富有电影感的故事文本，为后续视频制作提供充分的视觉指导。
+
   expected_output: >
-    A list of VideoPrompt objects, each containing:
-    - shot_id: Sequential shot identifier
-    - veo3_prompt: Complete, optimized prompt for VEO3 video generation
-    - duration: Duration of the shot in seconds
-    - character_reference_images: List of character image URLs for consistency
+    一个完整扩展的故事文本，包含：
+    - 清晰的开头、发展、高潮和结尾结构
+    - 丰富的视觉描述和环境细节
+    - 具体的角色动作和情感表现
+    - 适合视频制作的场景描述
+    - 大约800-1500字的详细叙述
+    - 保持原有角色和情节的完整性
+
+generate_prompts_task:
+  description: >
+    基于扩展的详细故事，生成{num_shots}个专业的VEO3视频生成提示词：
+
+    **故事背景：**
+    - 故事标题：{story_title}
+    - 目标时长：{target_duration}秒
+    - 需要生成：{num_shots}个5秒视频片段
+
+    **角色信息：**
+    {characters}
+
+    **VEO3提示词要求：**
+    1. 生成恰好{num_shots}个独立且连贯的提示词
+    2. 每个提示词对应一个5秒的视频片段
+    3. 提示词必须包含：
+       - 具体的场景和环境描述
+       - 明确的角色动作和表情
+       - 摄影角度和镜头类型（如近景、远景、特写等）
+       - 光线和色彩氛围
+       - 情绪和节奏指导
+    4. 确保角色外观与提供的描述完全一致
+    5. 保持镜头之间的视觉连贯性和故事流畅性
+    6. 使用专业的电影术语和VEO3优化的描述方式
+    7. 每个提示词应该简洁而精确，控制在30-50词内
+
+    **输出格式要求：**
+    为每个镜头输出一个编号的VEO3提示词，格式如下：
+    1. [具体的场景、角色动作、摄影角度和氛围描述]
+    2. [下一个场景的详细描述]
+    ...
+
+    确保每个提示词都能独立生成高质量的5秒视频片段，同时整体保持故事的连贯性。
+
+  expected_output: >
+    {num_shots}个专业VEO3视频提示词，格式为：
+    1. [第一个5秒片段的完整提示词]
+    2. [第二个5秒片段的完整提示词]
+    ...
+    每个提示词都应该：
+    - 包含准确的角色描述和场景设置
+    - 指定摄影角度和视觉效果
+    - 描述动作和情感表现
+    - 适合VEO3模型生成高质量视频
+    - 与前后镜头保持视觉连贯性

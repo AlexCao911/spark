@@ -1,0 +1,20 @@
+{
+  "project_id": "7570de8d-2952-44ba-95ac-f9397c95ac0f",
+  "instructions": {
+    "script_crew": {
+      "input_files": {
+        "story_outline": "crew_input/story_outline.json",
+        "character_profiles": "crew_input/character_profiles.json"
+      },
+      "output_directory": "scripts",
+      "tasks": [
+        "Expand story outline into detailed narrative",
+        "Break story into individual shots",
+        "Generate VEO3-optimized prompts with character references"
+      ]
+    }
+  },
+  "story_summary": "A lone geologist discovers a living organism deep within an active volcano, only to trigger a catastrophic eruption that engulfs the world in fire and ash—revealing the creature as both destroyer and creator of life.",
+  "character_count": 2,
+  "estimated_duration": 60
+}

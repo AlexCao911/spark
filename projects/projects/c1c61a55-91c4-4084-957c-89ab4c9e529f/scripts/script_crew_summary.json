@@ -1,0 +1,14 @@
+{
+  "project_id": "c1c61a55-91c4-4084-957c-89ab4c9e529f",
+  "detailed_story": {
+    "title": "The Silent Mutation",
+    "duration": 60,
+    "word_count": 135
+  },
+  "video_prompts": {
+    "total_shots": 12,
+    "total_duration": 60,
+    "veo3_optimized": true
+  },
+  "status": "completed"
+}

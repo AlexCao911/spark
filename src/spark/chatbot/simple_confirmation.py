@@ -17,7 +17,9 @@ class SimpleConfirmationManager:
     """简单的确认管理器，用于用户确认story outline和角色后存储数据"""
     
     def __init__(self):
-        self.storage_path = config.PROJECTS_STORAGE_PATH
+        # Use same path structure as ProjectManager: projects/projects/
+        base_path = config.PROJECTS_STORAGE_PATH
+        self.storage_path = os.path.join(base_path, "projects")
         self.ensure_storage_directory()
     
     def ensure_storage_directory(self) -> None:
@@ -39,6 +41,10 @@ class SimpleConfirmationManager:
             project_dir = os.path.join(self.storage_path, project_id)
             os.makedirs(project_dir, exist_ok=True)
             
+            # 创建crew_input目录（Script Crew需要）
+            crew_input_dir = os.path.join(project_dir, "crew_input")
+            os.makedirs(crew_input_dir, exist_ok=True)
+            
             # 准备保存的数据
             approved_content = {
                 "project_id": project_id,
@@ -55,6 +61,43 @@ class SimpleConfirmationManager:
             main_file = os.path.join(project_dir, "approved_content.json")
             with open(main_file, 'w', encoding='utf-8') as f:
                 json.dump(approved_content, f, ensure_ascii=False, indent=2)
+            
+            # 创建Script Crew所需的instructions.json
+            instructions_data = {
+                "project_id": project_id,
+                "instructions": {
+                    "script_crew": {
+                        "input_files": {
+                            "story_outline": "crew_input/story_outline.json",
+                            "character_profiles": "crew_input/character_profiles.json"
+                        },
+                        "output_directory": "scripts",
+                        "tasks": [
+                            "Expand story outline into detailed narrative",
+                            "Break story into individual shots", 
+                            "Generate VEO3-optimized prompts with character references"
+                        ]
+                    }
+                },
+                "story_summary": story_outline.summary,
+                "character_count": len(character_profiles),
+                "estimated_duration": story_outline.estimated_duration
+            }
+            
+            instructions_file = os.path.join(crew_input_dir, "instructions.json")
+            with open(instructions_file, 'w', encoding='utf-8') as f:
+                json.dump(instructions_data, f, ensure_ascii=False, indent=2)
+            
+            # 保存crew_input所需的文件
+            # story_outline.json in crew_input
+            crew_story_file = os.path.join(crew_input_dir, "story_outline.json")
+            with open(crew_story_file, 'w', encoding='utf-8') as f:
+                json.dump(story_outline.model_dump(), f, ensure_ascii=False, indent=2)
+            
+            # character_profiles.json in crew_input
+            crew_characters_file = os.path.join(crew_input_dir, "character_profiles.json")
+            with open(crew_characters_file, 'w', encoding='utf-8') as f:
+                json.dump([char.model_dump() for char in character_profiles], f, ensure_ascii=False, indent=2)
             
             # 保存角色图片信息（如果有的话）
             self._save_character_images_info(project_dir, character_profiles)

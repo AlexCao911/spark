@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Character",
+    "role": "main",
+    "appearance": "林澈",
+    "personality": "性格鲜明，有自己的独特魅力",
+    "backstory": "在世界模式的故事的背景下成长，经历了许多挑战和考验。作为林澈，他们的过去塑造了现在的性格和能力，为即将到来的冒险做好了准备。",
+    "motivations": [
+      "寻找真相",
+      "保护家人",
+      "实现梦想"
+    ],
+    "relationships": {},
+    "image_url": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/4c/20250726/1412f369/249063b8-a3d5-44a0-9578-554c94397758-1.png?Expires=1753563039&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=0BYi4IGesNyF2kabwQT%2BWcoSDMk%3D",
+    "visual_consistency_tags": [
+      " cinematic"
+    ]
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "shot_id": 1,
+    "veo3_prompt": "高空俯拍死寂火山群，云层低垂如铅块，微弱红光在Mount Sirena裂口跳动，远景镜头，冷蓝灰调，光影如心跳般节奏闪烁",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/c7/20250726/1412f369/ddd49a58-9f42-4838-be2a-d67cd65994e3-1.png?Expires=1753563532&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=C6YQDxyRh6KewTwJc55qjAME5uM%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/25/20250726/1412f369/716a08b1-f05e-4224-8960-b7ac1319f48e-1.png?Expires=1753563567&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=Vd3dLMEQNfQlDbFZA4og%2B46vPpM%3D"
+    ]
+  },
+  {
+    "shot_id": 2,
+    "veo3_prompt": "Dr. Elara Myles攀爬陡峭岩壁，靴底踩碎火山灰，面罩湿透露出锐利眼神，中景跟随镜头，暖橙光斑洒落肩头",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/c7/20250726/1412f369/ddd49a58-9f42-4838-be2a-d67cd65994e3-1.png?Expires=1753563532&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=C6YQDxyRh6KewTwJc55qjAME5uM%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/25/20250726/1412f369/716a08b1-f05e-4224-8960-b7ac1319f48e-1.png?Expires=1753563567&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=Vd3dLMEQNfQlDbFZA4og%2B46vPpM%3D"
+    ]
+  },
+  {
+    "shot_id": 3,
+    "veo3_prompt": "Elara的手指触碰岩石，温度异常高，脉搏震颤感清晰可见，特写镜头，逆光勾勒轮廓，皮肤微汗反光",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/c7/20250726/1412f369/ddd49a58-9f42-4838-be2a-d67cd65994e3-1.png?Expires=1753563532&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=C6YQDxyRh6KewTwJc55qjAME5uM%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/25/20250726/1412f369/716a08b1-f05e-4224-8960-b7ac1319f48e-1.png?Expires=1753563567&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=Vd3dLMEQNfQlDbFZA4og%2B46vPpM%3D"
+    ]
+  },
+  {
+    "shot_id": 4,
+    "veo3_prompt": "岩洞深处布满古老图腾，地面突然泛起蓝绿色生物荧光，Elara屏息凝视，手持摄像机微微颤抖，低角度仰拍",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/c7/20250726/1412f369/ddd49a58-9f42-4838-be2a-d67cd65994e3-1.png?Expires=1753563532&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=C6YQDxyRh6KewTwJc55qjAME5uM%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/25/20250726/1412f369/716a08b1-f05e-4224-8960-b7ac1319f48e-1.png?Expires=1753563567&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=Vd3dLMEQNfQlDbFZA4og%2B46vPpM%3D"
+    ]
+  },
+  {
+    "shot_id": 5,
+    "veo3_prompt": "半凝固熔岩构成的蛇形生命体蜷缩石柱间，金色脉络搏动如血管，它的眼睛是深邃黑洞却散发温暖光晕，特写镜头，幽蓝与金红交织",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/c7/20250726/1412f369/ddd49a58-9f42-4838-be2a-d67cd65994e3-1.png?Expires=1753563532&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=C6YQDxyRh6KewTwJc55qjAME5uM%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/25/20250726/1412f369/716a08b1-f05e-4224-8960-b7ac1319f48e-1.png?Expires=1753563567&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=Vd3dLMEQNfQlDbFZA4og%2B46vPpM%3D"
+    ]
+  },
+  {
+    "shot_id": 6,
+    "veo3_prompt": "生物缓缓睁眼，无恶意只有凝视，巨岩被无形之力拉伸成拱门，慢镜头拍摄，柔光穿透岩缝，形成神圣氛围",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/c7/20250726/1412f369/ddd49a58-9f42-4838-be2a-d67cd65994e3-1.png?Expires=1753563532&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=C6YQDxyRh6KewTwJc55qjAME5uM%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/25/20250726/1412f369/716a08b1-f05e-4224-8960-b7ac1319f48e-1.png?Expires=1753563567&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=Vd3dLMEQNfQlDbFZA4og%2B46vPpM%3D"
+    ]
+  },
+  {
+    "shot_id": 7,
+    "veo3_prompt": "触须轻拂Elara仪器，数据流瞬间读取，屏幕上闪过复杂神经网络图谱，近景特写她震惊表情，瞳孔放大",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/c7/20250726/1412f369/ddd49a58-9f42-4838-be2a-d67cd65994e3-1.png?Expires=1753563532&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=C6YQDxyRh6KewTwJc55qjAME5uM%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/25/20250726/1412f369/716a08b1-f05e-4224-8960-b7ac1319f48e-1.png?Expires=1753563567&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=Vd3dLMEQNfQlDbFZA4og%2B46vPpM%3D"
+    ]
+  },
+  {
+    "shot_id": 8,
+    "veo3_prompt": "地面剧烈震动，火山喷发炽热火焰雨，黑烟夹杂电火花遮蔽天空，Elara狂奔逃离，远景快速切换崩塌岩壁",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/c7/20250726/1412f369/ddd49a58-9f42-4838-be2a-d67cd65994e3-1.png?Expires=1753563532&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=C6YQDxyRh6KewTwJc55qjAME5uM%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/25/20250726/1412f369/716a08b1-f05e-4224-8960-b7ac1319f48e-1.png?Expires=1753563567&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=Vd3dLMEQNfQlDbFZA4og%2B46vPpM%3D"
+    ]
+  },
+  {
+    "shot_id": 9,
+    "veo3_prompt": "整座山体炸裂火柱冲天，映红大陆，快剪城市燃烧画面：高楼坍塌、人群逃窜、飞机坠落，动态广角镜头，橘红与灰黑对比强烈",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/c7/20250726/1412f369/ddd49a58-9f42-4838-be2a-d67cd65994e3-1.png?Expires=1753563532&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=C6YQDxyRh6KewTwJc55qjAME5uM%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/25/20250726/1412f369/716a08b1-f05e-4224-8960-b7ac1319f48e-1.png?Expires=1753563567&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=Vd3dLMEQNfQlDbFZA4og%2B46vPpM%3D"
+    ]
+  },
+  {
+    "shot_id": 10,
+    "veo3_prompt": "Elara站在远方山脊，衣衫褴褛脸上沾满灰烬，紧握闪亮芯片，特写泪水混灰尘滑落脸颊，逆光剪影，悲伤而坚定",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/c7/20250726/1412f369/ddd49a58-9f42-4838-be2a-d67cd65994e3-1.png?Expires=1753563532&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=C6YQDxyRh6KewTwJc55qjAME5uM%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/25/20250726/1412f369/716a08b1-f05e-4224-8960-b7ac1319f48e-1.png?Expires=1753563567&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=Vd3dLMEQNfQlDbFZA4og%2B46vPpM%3D"
+    ]
+  },
+  {
+    "shot_id": 11,
+    "veo3_prompt": "火山口升起百米高活体生物，融合蛇与巨人形态，全身流淌熔岩光辉，站立山顶面向世界，高空俯拍，金红光芒刺破黑暗",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/c7/20250726/1412f369/ddd49a58-9f42-4838-be2a-d67cd65994e3-1.png?Expires=1753563532&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=C6YQDxyRh6KewTwJc55qjAME5uM%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/25/20250726/1412f369/716a08b1-f05e-4224-8960-b7ac1319f48e-1.png?Expires=1753563567&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=Vd3dLMEQNfQlDbFZA4og%2B46vPpM%3D"
+    ]
+  },
+  {
+    "shot_id": 12,
+    "veo3_prompt": "最终镜头：生物双目睁开，光芒照亮整片废墟，屏幕渐黑仅留字幕“Not destruction. Evolution.”，极简黑白背景中一点金红闪耀",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/c7/20250726/1412f369/ddd49a58-9f42-4838-be2a-d67cd65994e3-1.png?Expires=1753563532&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=C6YQDxyRh6KewTwJc55qjAME5uM%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/25/20250726/1412f369/716a08b1-f05e-4224-8960-b7ac1319f48e-1.png?Expires=1753563567&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=Vd3dLMEQNfQlDbFZA4og%2B46vPpM%3D"
+    ]
+  }
+]

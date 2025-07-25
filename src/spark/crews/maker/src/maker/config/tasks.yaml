@@ -1,40 +1,106 @@
-generate_video_clips_task:
+load_project_prompts_task:
   description: >
-    Generate individual video clips from VEO3-optimized prompts with character consistency.
+    从指定项目的scripts目录加载VEO3优化的视频提示词数据。
     
-    You will receive:
-    - List of VideoPrompt objects with VEO3-optimized prompts
-    - Character reference images for visual consistency
+    **执行步骤：**
+    1. 使用Project Video Prompts Loader工具加载项目 {project_id} 的video_prompts.json文件
+    2. 验证数据完整性，确保每个提示词包含必要的字段：shot_id, veo3_prompt, duration, character_reference_images
+    3. 检查角色参考图像URL的可访问性
+    4. 统计总镜头数和预估总时长
+    5. 为后续视频生成任务准备结构化数据
     
-    Your task is to:
-    1. Process each video prompt sequentially
-    2. Use VEO3 API to generate video clips with character reference images
-    3. Monitor generation status and handle any failures gracefully
-    4. Ensure visual consistency across all clips using character references
-    5. Validate that generated clips meet quality standards
-    6. Handle API rate limiting and retry logic
-    
-    Each generated clip should maintain character appearance consistency and meet the specified duration requirements.
+    **注意事项：**
+    - 如果文件不存在或数据格式错误，立即报告问题
+    - 验证所有必要字段都存在且格式正确
+    - 记录任何异常或警告信息
   expected_output: >
-    A list of video clip URLs or file paths, each corresponding to a successfully generated video clip from the input prompts.
+    一个详细的项目视频提示词分析报告，包含：
+    - 成功加载的提示词总数
+    - 每个镜头的基本信息（shot_id, duration, 角色引用图片数量）
+    - 项目总时长和镜头分布
+    - 数据验证结果和任何发现的问题
+    - 为下一步视频生成准备的提示词列表
+  agent: veo3_video_generator
+
+generate_individual_videos_task:
+  description: >
+    基于已加载的视频提示词，使用VEO3 API逐个生成高质量视频片段。
+    
+    **执行步骤：**
+    1. 按照shot_id顺序处理每个视频提示词
+    2. 对每个提示词使用VEO3 Video Generation Tool生成视频
+    3. 传递完整的参数：prompt_text, duration, reference_images, shot_id
+    4. 处理可能的异步作业，使用VEO3 Job Status Checker监控进度
+    5. 如果返回视频URL，使用Video File Downloader下载到本地
+    6. 为每个成功生成的视频记录元数据
+    7. 实现错误重试机制（最多3次）
+    
+    **质量控制：**
+    - 验证生成的视频文件完整性
+    - 检查视频时长是否符合要求
+    - 确保文件格式正确且可播放
+    - 记录生成时间和API响应状态
+  expected_output: >
+    一个结构化的视频生成结果报告，包含：
+    {
+      "total_shots": "总镜头数",
+      "successful_generations": "成功生成数量",
+      "failed_generations": "失败生成数量",
+      "video_files": [
+        {
+          "shot_id": "镜头ID",
+          "local_file_path": "本地文件路径",
+          "file_size_mb": "文件大小（MB）",
+          "actual_duration": "实际时长",
+          "generation_status": "生成状态",
+          "api_response_time": "API响应时间"
+        }
+      ],
+      "failed_shots": ["失败的镜头ID列表"],
+      "total_generation_time": "总生成时间",
+      "average_file_size": "平均文件大小"
+    }
+  agent: veo3_video_generator
 
 assemble_final_video_task:
   description: >
-    Assemble individual video clips into a cohesive final video with professional quality.
+    将所有成功生成的视频片段按照故事顺序组装成最终的完整视频。
     
-    You will receive:
-    - List of video clip URLs or file paths
-    - Original video prompts for context and timing
+    **执行步骤：**
+    1. 从上一个任务获取成功生成的视频文件列表
+    2. 按照shot_id排序确保正确的故事顺序
+    3. 验证所有视频文件的存在性和可读性
+    4. 使用Video Assembly Tool将视频片段组装
+    5. 应用专业的视频处理设置：
+       - 分辨率：1080p
+       - 帧率：24fps
+       - 编码：H.264
+       - 音频编码：AAC
+    6. 生成最终的MP4文件
+    7. 验证最终视频的质量和完整性
     
-    Your task is to:
-    1. Download or access all video clips
-    2. Concatenate clips in the correct sequential order
-    3. Apply smooth transitions between clips
-    4. Ensure consistent audio levels and quality
-    5. Convert to final MP4 format with appropriate compression
-    6. Validate the final video for quality and completeness
-    7. Handle any technical issues with individual clips
-    
-    The final video should be a seamless, professional-quality production ready for distribution.
+    **后期制作要求：**
+    - 确保片段间的流畅转场
+    - 保持一致的音频水平
+    - 优化文件大小与质量平衡
+    - 添加适当的元数据信息
   expected_output: >
-    A file path to the final assembled video in MP4 format, ready for download or distribution.
+    最终视频制作的完整报告：
+    {
+      "final_video_path": "最终视频文件的完整路径",
+      "total_duration": "总时长（秒）",
+      "final_file_size_mb": "最终文件大小（MB）",
+      "video_specifications": {
+        "resolution": "分辨率",
+        "fps": "帧率",
+        "codec": "视频编码",
+        "audio_codec": "音频编码"
+      },
+      "assembly_details": {
+        "clips_assembled": "组装的片段数量",
+        "processing_time": "处理时间",
+        "quality_score": "质量评分"
+      },
+      "delivery_status": "ready_for_distribution"
+    }
+  agent: video_assembly_specialist

@@ -1,0 +1,38 @@
+[
+  {
+    "shot_id": 1,
+    "veo3_prompt": "中年女画家Emma坐在褪色木椅上背对镜头，素净亚麻衬衫袖口微卷，手指沾着赭石颜料轻触画布，特写镜头捕捉阳光透过梧桐叶隙洒在青石板上的斑驳光影，柔金暖调",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/b3/20250726/1412f369/bbdbd8b9-4a6e-4be8-9339-cc80e2157bce-1.png?Expires=1753565537&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=0D%2Fu2Zo8cGtAGjmGrQUFIDWTBc0%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/8c/20250726/1412f369/0d13c6e6-b478-47d1-ae91-b6f21817c54e-1.png?Expires=1753565564&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zAKeMB8Q6i0dHTx87u4sWsFkWoY%3D"
+    ]
+  },
+  {
+    "shot_id": 2,
+    "veo3_prompt": "欧洲男子David悄然走近，浅灰亚麻西装肩背微驼，目光静静落在Emma身上，中景环绕拍摄两人之间空隙，侧光勾勒轮廓，温暖棕褐色调营造无声共鸣氛围",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/b3/20250726/1412f369/bbdbd8b9-4a6e-4be8-9339-cc80e2157bce-1.png?Expires=1753565537&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=0D%2Fu2Zo8cGtAGjmGrQUFIDWTBc0%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/8c/20250726/1412f369/0d13c6e6-b478-47d1-ae91-b6f21817c54e-1.png?Expires=1753565564&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zAKeMB8Q6i0dHTx87u4sWsFkWoY%3D"
+    ]
+  },
+  {
+    "shot_id": 3,
+    "veo3_prompt": "David缓缓坐下与Emma仅一臂之遥，低头凝视画布上渐显的橙红墙与橄榄枝，近景特写Emma指尖点朱砂于玫瑰花瓣，夕阳斜照使影子融合，暖橙深蓝对比强化情绪张力",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/b3/20250726/1412f369/bbdbd8b9-4a6e-4be8-9339-cc80e2157bce-1.png?Expires=1753565537&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=0D%2Fu2Zo8cGtAGjmGrQUFIDWTBc0%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/8c/20250726/1412f369/0d13c6e6-b478-47d1-ae91-b6f21817c54e-1.png?Expires=1753565564&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zAKeMB8Q6i0dHTx87u4sWsFkWoY%3D"
+    ]
+  },
+  {
+    "shot_id": 4,
+    "veo3_prompt": "Emma起身收起画具走向小径尽头，身影融入黄昏暖光，远景定格David仍坐原地望向未完成的画作，闭眼微笑似听见古老旋律，深紫琥珀色日落余晖渲染留白意境",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/b3/20250726/1412f369/bbdbd8b9-4a6e-4be8-9339-cc80e2157bce-1.png?Expires=1753565537&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=0D%2Fu2Zo8cGtAGjmGrQUFIDWTBc0%3D",
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/8c/20250726/1412f369/0d13c6e6-b478-47d1-ae91-b6f21817c54e-1.png?Expires=1753565564&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zAKeMB8Q6i0dHTx87u4sWsFkWoY%3D"
+    ]
+  }
+]

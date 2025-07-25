@@ -1,0 +1,20 @@
+{
+  "project_id": "c1c61a55-91c4-4084-957c-89ab4c9e529f",
+  "instructions": {
+    "script_crew": {
+      "input_files": {
+        "story_outline": "crew_input/story_outline.json",
+        "character_profiles": "crew_input/character_profiles.json"
+      },
+      "output_directory": "scripts",
+      "tasks": [
+        "Expand story outline into detailed narrative",
+        "Break story into individual shots",
+        "Generate VEO3-optimized prompts with character references"
+      ]
+    }
+  },
+  "story_summary": "When a rogue genetic experiment leaks into the city, a once-quiet lab becomes the birthplace of terrifying new lifeforms—forcing a scientist to confront the consequences of playing god.",
+  "character_count": 2,
+  "estimated_duration": 60
+}

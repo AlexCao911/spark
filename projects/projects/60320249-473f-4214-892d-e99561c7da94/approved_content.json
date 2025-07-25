@@ -1,0 +1,66 @@
+{
+  "project_id": "60320249-473f-4214-892d-e99561c7da94",
+  "project_name": "The Warmth of the Garden_项目",
+  "created_at": "2025-07-26T05:32:45.094744",
+  "user_idea": {
+    "theme": "温的感觉",
+    "genre": "drama",
+    "target_audience": "general",
+    "duration_preference": 20,
+    "basic_characters": [
+      "一个画家",
+      "一个欧洲人"
+    ],
+    "plot_points": [
+      "画家独行在花园中",
+      "观众感受到平静与温馨",
+      "有种意大利的感觉"
+    ],
+    "visual_style": "cinematic",
+    "mood": "calm"
+  },
+  "story_outline": {
+    "title": "The Warmth of the Garden",
+    "summary": "A solitary painter finds peace in a sun-dappled garden, where his quiet presence and brushstrokes evoke the gentle spirit of Italy—touching the heart of a passing European traveler.",
+    "narrative_text": "In a secluded garden bathed in golden afternoon light, a painter sits alone on a weathered bench, palette in hand. The air is still, filled with the scent of jasmine and the soft rustle of leaves. His strokes are deliberate yet unhurried, capturing the warmth of the scene—not just in color, but in feeling. As he paints, the camera lingers on his hands, the way they move with quiet confidence, and the peaceful smile that flickers when he pauses to admire his work.\n\nSuddenly, a European man—dressed in linen and carrying a worn leather satchel—approaches hesitantly. He doesn’t speak, only watches the painter for a moment before sitting nearby. The two share no words, yet their silence speaks volumes: a mutual recognition of beauty, of stillness, of something deeper than language. The painter offers a small nod; the man returns it, eyes softening as he takes in the vibrant hues of the garden now alive on canvas.\n\nThe camera glides slowly around them, capturing the interplay of light and shadow, the subtle gestures—a brush dipped in ochre, a hand resting on a knee, the distant sound of a fountain. It’s not just a painting being made—it’s a memory forming, a connection unfolding. The mood remains calm, cinematic, intimate, like a frame from an Italian film where time slows down just enough to let the soul breathe.\n\nAs the sun begins to dip behind the trees, the painter stands, brushes his hands, and walks away without looking back. The European man stays a while longer, watching the empty bench, then smiles—not at the painting, but at the warmth it left behind. In those final seconds, the garden feels alive with shared emotion, a testament to how human connection can bloom even in silence.",
+    "estimated_duration": 20
+  },
+  "character_profiles": [
+    {
+      "name": "Emma",
+      "role": "main",
+      "appearance": "一个画家",
+      "personality": "深沉、敏感，情感丰富，善于思考",
+      "backstory": "在温的感觉的背景下成长，经历了许多挑战和考验。作为一个画家，他们的过去塑造了现在的性格和能力，为即将到来的冒险做好了准备。",
+      "motivations": [
+        "寻找真相",
+        "保护家人",
+        "实现梦想"
+      ],
+      "relationships": {},
+      "image_url": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/b3/20250726/1412f369/bbdbd8b9-4a6e-4be8-9339-cc80e2157bce-1.png?Expires=1753565537&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=0D%2Fu2Zo8cGtAGjmGrQUFIDWTBc0%3D",
+      "visual_consistency_tags": [
+        "cinematic"
+      ]
+    },
+    {
+      "name": "David",
+      "role": "supporting",
+      "appearance": "一个欧洲人",
+      "personality": "深沉、敏感，情感丰富，善于思考",
+      "backstory": "在温的感觉的背景下成长，经历了许多挑战和考验。作为一个欧洲人，他们的过去塑造了现在的性格和能力，为即将到来的冒险做好了准备。",
+      "motivations": [
+        "寻找真相",
+        "保护家人",
+        "实现梦想"
+      ],
+      "relationships": {},
+      "image_url": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/8c/20250726/1412f369/0d13c6e6-b478-47d1-ae91-b6f21817c54e-1.png?Expires=1753565564&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=zAKeMB8Q6i0dHTx87u4sWsFkWoY%3D",
+      "visual_consistency_tags": [
+        "cinematic"
+      ]
+    }
+  ],
+  "status": "approved",
+  "user_confirmed": true
+}
