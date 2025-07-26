@@ -1,106 +1,99 @@
-load_project_prompts_task:
+generate_video_clips_task:
   description: >
-    从指定项目的scripts目录加载VEO3优化的视频提示词数据。
-    
-    **执行步骤：**
-    1. 使用Project Video Prompts Loader工具加载项目 {project_id} 的video_prompts.json文件
-    2. 验证数据完整性，确保每个提示词包含必要的字段：shot_id, veo3_prompt, duration, character_reference_images
-    3. 检查角色参考图像URL的可访问性
-    4. 统计总镜头数和预估总时长
-    5. 为后续视频生成任务准备结构化数据
-    
-    **注意事项：**
-    - 如果文件不存在或数据格式错误，立即报告问题
-    - 验证所有必要字段都存在且格式正确
-    - 记录任何异常或警告信息
-  expected_output: >
-    一个详细的项目视频提示词分析报告，包含：
-    - 成功加载的提示词总数
-    - 每个镜头的基本信息（shot_id, duration, 角色引用图片数量）
-    - 项目总时长和镜头分布
-    - 数据验证结果和任何发现的问题
-    - 为下一步视频生成准备的提示词列表
-  agent: veo3_video_generator
+    使用VEO3 API生成所有视频片段：
 
-generate_individual_videos_task:
-  description: >
-    基于已加载的视频提示词，使用VEO3 API逐个生成高质量视频片段。
-    
-    **执行步骤：**
-    1. 按照shot_id顺序处理每个视频提示词
-    2. 对每个提示词使用VEO3 Video Generation Tool生成视频
-    3. 传递完整的参数：prompt_text, duration, reference_images, shot_id
-    4. 处理可能的异步作业，使用VEO3 Job Status Checker监控进度
-    5. 如果返回视频URL，使用Video File Downloader下载到本地
-    6. 为每个成功生成的视频记录元数据
-    7. 实现错误重试机制（最多3次）
-    
-    **质量控制：**
-    - 验证生成的视频文件完整性
-    - 检查视频时长是否符合要求
-    - 确保文件格式正确且可播放
-    - 记录生成时间和API响应状态
+    **项目信息：**
+    - 项目ID：{project_id}
+    - 视频标题：{video_title}
+    - 总时长：{total_duration}秒
+
+    **视频提示词列表：**
+    {video_prompts}
+
+    **角色参考图像：**
+    {character_images}
+
+    **生成要求：**
+    1. 为每个提示词生成对应的5秒视频片段
+    2. 确保所有片段保持角色外观的一致性
+    3. 使用提供的角色参考图像维持视觉连贯性
+    4. 优化VEO3生成参数以获得最佳质量
+    5. 处理生成过程中的错误和重试逻辑
+    6. 验证每个生成的视频片段的质量和时长
+    7. 将生成的视频文件保存到项目目录
+    8. 记录生成进度和状态信息
+
+    **技术规范：**
+    - 分辨率：1080p (1920x1080)
+    - 帧率：24fps
+    - 格式：MP4
+    - 编码：H.264
+    - 时长：每片段5秒
+
+    **错误处理：**
+    - 实施指数退避重试策略
+    - 处理API限制和超时
+    - 生成失败时提供备用方案
+    - 记录详细的错误日志
+
+    请按顺序处理每个视频提示词，生成对应的视频片段，并确保整体质量和一致性。
+
   expected_output: >
-    一个结构化的视频生成结果报告，包含：
-    {
-      "total_shots": "总镜头数",
-      "successful_generations": "成功生成数量",
-      "failed_generations": "失败生成数量",
-      "video_files": [
-        {
-          "shot_id": "镜头ID",
-          "local_file_path": "本地文件路径",
-          "file_size_mb": "文件大小（MB）",
-          "actual_duration": "实际时长",
-          "generation_status": "生成状态",
-          "api_response_time": "API响应时间"
-        }
-      ],
-      "failed_shots": ["失败的镜头ID列表"],
-      "total_generation_time": "总生成时间",
-      "average_file_size": "平均文件大小"
-    }
-  agent: veo3_video_generator
+    完成所有视频片段的生成，输出包括：
+    - 每个视频片段的本地文件路径
+    - 生成状态报告（成功/失败/重试次数）
+    - 视频质量验证结果
+    - 角色一致性检查结果
+    - 总体生成统计信息
+    - 为视频编辑准备的片段清单
 
 assemble_final_video_task:
   description: >
-    将所有成功生成的视频片段按照故事顺序组装成最终的完整视频。
-    
-    **执行步骤：**
-    1. 从上一个任务获取成功生成的视频文件列表
-    2. 按照shot_id排序确保正确的故事顺序
-    3. 验证所有视频文件的存在性和可读性
-    4. 使用Video Assembly Tool将视频片段组装
-    5. 应用专业的视频处理设置：
-       - 分辨率：1080p
-       - 帧率：24fps
-       - 编码：H.264
-       - 音频编码：AAC
-    6. 生成最终的MP4文件
-    7. 验证最终视频的质量和完整性
-    
-    **后期制作要求：**
-    - 确保片段间的流畅转场
-    - 保持一致的音频水平
-    - 优化文件大小与质量平衡
-    - 添加适当的元数据信息
+    将生成的视频片段拼接成最终完整视频：
+
+    **输入材料：**
+    - 项目ID：{project_id}
+    - 视频片段列表：{video_clips}
+    - 目标总时长：{total_duration}秒
+    - 视频标题：{video_title}
+
+    **拼接要求：**
+    1. 按照故事顺序拼接所有视频片段
+    2. 添加平滑的转场效果（淡入淡出或切换）
+    3. 确保音频连续性和同步
+    4. 优化整体视频质量和压缩
+    5. 添加开头标题和结尾字幕（如需要）
+    6. 处理片段之间的时长调整
+    7. 应用色彩校正和统一化处理
+    8. 生成多种格式和分辨率版本
+
+    **技术规范：**
+    - 主输出格式：MP4 (H.264)
+    - 分辨率：1080p
+    - 帧率：24fps
+    - 音频：AAC 44.1kHz
+    - 比特率：自适应优化
+
+    **输出版本：**
+    1. 高质量版本（用于下载和存档）
+    2. 网络优化版本（用于在线播放）
+    3. 移动设备版本（较小文件大小）
+
+    **质量控制：**
+    - 检查视频完整性和播放流畅性
+    - 验证音视频同步
+    - 确保无损坏帧或异常
+    - 生成视频预览和缩略图
+
+    请完成视频拼接和后期处理，输出专业质量的最终视频文件。
+
   expected_output: >
-    最终视频制作的完整报告：
-    {
-      "final_video_path": "最终视频文件的完整路径",
-      "total_duration": "总时长（秒）",
-      "final_file_size_mb": "最终文件大小（MB）",
-      "video_specifications": {
-        "resolution": "分辨率",
-        "fps": "帧率",
-        "codec": "视频编码",
-        "audio_codec": "音频编码"
-      },
-      "assembly_details": {
-        "clips_assembled": "组装的片段数量",
-        "processing_time": "处理时间",
-        "quality_score": "质量评分"
-      },
-      "delivery_status": "ready_for_distribution"
-    }
-  agent: video_assembly_specialist
+    完整的最终视频文件，包括：
+    - 主视频文件路径（高质量版本）
+    - 网络优化版本文件路径
+    - 移动版本文件路径
+    - 视频元数据信息（时长、分辨率、文件大小）
+    - 质量检查报告
+    - 缩略图和预览图像
+    - 视频制作统计信息
+    - 可用于分享的下载链接

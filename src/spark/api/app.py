@@ -14,6 +14,7 @@ from .config import config
 from .routes.chat import chat_bp
 from .routes.content import content_bp
 from .routes.projects import projects_bp
+from .routes.video import video_bp
 
 # 配置日志
 logging.basicConfig(
@@ -44,6 +45,7 @@ def create_app(config_name='default'):
     app.register_blueprint(chat_bp)
     app.register_blueprint(content_bp)
     app.register_blueprint(projects_bp)
+    app.register_blueprint(video_bp)
     
     # 基础路由
     @app.route('/api/health', methods=['GET'])
@@ -101,6 +103,15 @@ def create_app(config_name='default'):
                     'GET /api/projects/search': '搜索项目',
                     'GET /api/projects/<id>/export': '导出项目',
                     'POST /api/projects/<id>/characters/<name>/regenerate': '重新生成角色图片'
+                },
+                'video': {
+                    'POST /api/video/generate': '启动视频生成流程',
+                    'GET /api/video/status/<job_id>': '获取视频生成状态',
+                    'GET /api/video/download/<project_id>/<video_type>': '下载生成的视频',
+                    'GET /api/video/thumbnail/<project_id>': '获取视频缩略图',
+                    'GET /api/video/projects': '列出所有可用项目',
+                    'GET /api/video/project/<project_id>/status': '获取详细项目状态',
+                    'GET /api/video/jobs': '列出所有活跃的视频生成任务'
                 },
                 'system': {
                     'GET /api/health': '健康检查',

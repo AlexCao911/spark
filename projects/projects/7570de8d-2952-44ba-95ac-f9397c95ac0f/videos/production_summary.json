@@ -1,0 +1,125 @@
+{
+  "project_id": "7570de8d-2952-44ba-95ac-f9397c95ac0f",
+  "video_generation": {
+    "project_id": "7570de8d-2952-44ba-95ac-f9397c95ac0f",
+    "total_prompts": 12,
+    "successful_clips": 12,
+    "failed_clips": 0,
+    "clips": [
+      {
+        "clip_id": 1,
+        "shot_id": 1,
+        "file_path": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/videos/shot_001.mp4",
+        "duration": 5,
+        "status": "completed"
+      },
+      {
+        "clip_id": 2,
+        "shot_id": 2,
+        "file_path": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/videos/shot_002.mp4",
+        "duration": 5,
+        "status": "completed"
+      },
+      {
+        "clip_id": 3,
+        "shot_id": 3,
+        "file_path": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/videos/shot_003.mp4",
+        "duration": 5,
+        "status": "completed"
+      },
+      {
+        "clip_id": 4,
+        "shot_id": 4,
+        "file_path": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/videos/shot_004.mp4",
+        "duration": 5,
+        "status": "completed"
+      },
+      {
+        "clip_id": 5,
+        "shot_id": 5,
+        "file_path": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/videos/shot_005.mp4",
+        "duration": 5,
+        "status": "completed"
+      },
+      {
+        "clip_id": 6,
+        "shot_id": 6,
+        "file_path": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/videos/shot_006.mp4",
+        "duration": 5,
+        "status": "completed"
+      },
+      {
+        "clip_id": 7,
+        "shot_id": 7,
+        "file_path": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/videos/shot_007.mp4",
+        "duration": 5,
+        "status": "completed"
+      },
+      {
+        "clip_id": 8,
+        "shot_id": 8,
+        "file_path": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/videos/shot_008.mp4",
+        "duration": 5,
+        "status": "completed"
+      },
+      {
+        "clip_id": 9,
+        "shot_id": 9,
+        "file_path": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/videos/shot_009.mp4",
+        "duration": 5,
+        "status": "completed"
+      },
+      {
+        "clip_id": 10,
+        "shot_id": 10,
+        "file_path": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/videos/shot_010.mp4",
+        "duration": 5,
+        "status": "completed"
+      },
+      {
+        "clip_id": 11,
+        "shot_id": 11,
+        "file_path": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/videos/shot_011.mp4",
+        "duration": 5,
+        "status": "completed"
+      },
+      {
+        "clip_id": 12,
+        "shot_id": 12,
+        "file_path": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/videos/shot_012.mp4",
+        "duration": 5,
+        "status": "completed"
+      }
+    ],
+    "status": "completed"
+  },
+  "video_assembly": {
+    "status": "completed",
+    "outputs": {
+      "high_quality": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/final_videos/Generated Video_HQ.mp4",
+      "web_optimized": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/final_videos/Generated Video_Web.mp4",
+      "mobile": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/final_videos/Generated Video_Mobile.mp4"
+    },
+    "thumbnail": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/final_videos/Generated Video_thumbnail.jpg",
+    "metadata": {
+      "total_clips": 12,
+      "method": "ffmpeg"
+    },
+    "project_id": "7570de8d-2952-44ba-95ac-f9397c95ac0f",
+    "video_title": "Generated Video",
+    "target_duration": 60
+  },
+  "final_videos": {
+    "high_quality": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/final_videos/Generated Video_HQ.mp4",
+    "web_optimized": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/final_videos/Generated Video_Web.mp4",
+    "mobile": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/final_videos/Generated Video_Mobile.mp4"
+  },
+  "thumbnail": "projects/projects/7570de8d-2952-44ba-95ac-f9397c95ac0f/final_videos/Generated Video_thumbnail.jpg",
+  "metadata": {
+    "title": "Generated Video",
+    "total_clips": 12,
+    "successful_clips": 12,
+    "final_duration": 0
+  },
+  "status": "completed"
+}

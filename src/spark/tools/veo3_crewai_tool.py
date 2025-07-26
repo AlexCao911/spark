@@ -8,7 +8,15 @@ import json
 import time
 from typing import Dict, List, Optional
 from pathlib import Path
-from crewai_tools import tool
+try:
+    from crewai_tools import tool
+except ImportError:
+    # Fallback if crewai_tools is not available
+    def tool(name):
+        def decorator(func):
+            func.tool_name = name
+            return func
+        return decorator
 from ..models import VideoPrompt
 from .veo3_real_tool import VEO3RealTool
 
