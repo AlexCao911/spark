@@ -1,0 +1,48 @@
+{
+  "project_id": "f6a85f66-37b0-4efd-b77e-706b58d74c9c",
+  "project_name": "The Genesis Experiment_项目",
+  "created_at": "2025-07-26T14:44:10.131780",
+  "user_idea": {
+    "theme": "生物变异",
+    "genre": "sci-fi",
+    "target_audience": "adults",
+    "duration_preference": 30,
+    "basic_characters": [
+      "疯狂科学家"
+    ],
+    "plot_points": [
+      "主角进行生物变异实验",
+      "实验产生意外结果",
+      "展示变异后的生物或后果"
+    ],
+    "visual_style": "cinematic",
+    "mood": "mysterious"
+  },
+  "story_outline": {
+    "title": "The Genesis Experiment",
+    "summary": "A reclusive scientist pushes the boundaries of biology, unleashing a creature born from his own ambition—only to realize too late that some mutations defy control.",
+    "narrative_text": "Dr. Elias Voss, a brilliant but isolated geneticist, works in a hidden underground lab where light flickers like a heartbeat and the air hums with suppressed energy. He’s spent years perfecting an experiment designed to enhance human resilience through targeted DNA manipulation—a project he believes will save humanity from its own fragility. But when the final serum is injected into a test subject, something goes wrong: the creature doesn’t evolve—it transforms. Its body shifts unnaturally, limbs elongating, eyes glowing with an alien intelligence, and skin rippling like liquid mercury. The lab alarms blare as the creature breaks free, not with rage, but with eerie calm. It walks toward Elias—not to attack, but to observe him, as if it has already learned what makes him human. In that moment, Elias realizes the truth: this isn’t just a mutation—it’s a new form of life, one that sees him not as a creator, but as a specimen. As the camera lingers on the creature’s face—half-human, half-unknown—the screen fades to black, leaving only the sound of a slow, deliberate breath.",
+    "estimated_duration": 30
+  },
+  "character_profiles": [
+    {
+      "name": "Alex",
+      "role": "main",
+      "appearance": "疯狂科学家",
+      "personality": "理性、好奇，对科技和未知充满探索欲",
+      "backstory": "在生物变异的背景下成长，经历了许多挑战和考验。作为疯狂科学家，他们的过去塑造了现在的性格和能力，为即将到来的冒险做好了准备。",
+      "motivations": [
+        "寻找真相",
+        "保护家人",
+        "实现梦想"
+      ],
+      "relationships": {},
+      "image_url": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/da/20250726/1412f369/db82b21c-26f7-4c4d-b925-d2e9c5bebb73-1.png?Expires=1753598645&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=8lLxJ23NkHphunb7QMy2Bh8HlfI%3D",
+      "visual_consistency_tags": [
+        "cinematic"
+      ]
+    }
+  ],
+  "status": "approved",
+  "user_confirmed": true
+}

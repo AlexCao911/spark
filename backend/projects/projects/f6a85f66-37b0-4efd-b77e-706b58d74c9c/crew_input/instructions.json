@@ -1,0 +1,20 @@
+{
+  "project_id": "f6a85f66-37b0-4efd-b77e-706b58d74c9c",
+  "instructions": {
+    "script_crew": {
+      "input_files": {
+        "story_outline": "crew_input/story_outline.json",
+        "character_profiles": "crew_input/character_profiles.json"
+      },
+      "output_directory": "scripts",
+      "tasks": [
+        "Expand story outline into detailed narrative",
+        "Break story into individual shots",
+        "Generate VEO3-optimized prompts with character references"
+      ]
+    }
+  },
+  "story_summary": "A reclusive scientist pushes the boundaries of biology, unleashing a creature born from his own ambition—only to realize too late that some mutations defy control.",
+  "character_count": 1,
+  "estimated_duration": 30
+}

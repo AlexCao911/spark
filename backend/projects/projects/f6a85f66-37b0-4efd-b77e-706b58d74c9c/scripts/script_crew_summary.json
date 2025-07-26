@@ -1,0 +1,14 @@
+{
+  "project_id": "f6a85f66-37b0-4efd-b77e-706b58d74c9c",
+  "detailed_story": {
+    "title": "The Genesis Experiment",
+    "duration": 30,
+    "word_count": 104
+  },
+  "video_prompts": {
+    "total_shots": 6,
+    "total_duration": 30,
+    "veo3_optimized": true
+  },
+  "status": "completed"
+}

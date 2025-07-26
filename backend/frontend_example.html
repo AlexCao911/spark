@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spark AI 视频生成 - 前端示例</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .chat-container {
+            height: 400px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: #fafafa;
+            margin-bottom: 15px;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .user-message {
+            background-color: #007bff;
+            color: white;
+            text-align: right;
+        }
+        
+        .bot-message {
+            background-color: #e9ecef;
+            color: #333;
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        input[type="text"] {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        button {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        
+        .project-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #f8f9fa;
+        }
+        
+        .character-card {
+            display: inline-block;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            background-color: white;
+            width: 200px;
+        }
+        
+        .character-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .video-player {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            border-radius: 8px;
+        }
+        
+        .status {
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        
+        .status.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .status.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .status.info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎬 Spark AI 视频生成系统</h1>
+    
+    <!-- 1. 聊天机器人对话 -->
+    <div class="container">
+        <h2>💬 聊天机器人对话</h2>
+        <div id="chatContainer" class="chat-container"></div>
+        <div class="input-group">
+            <input type="text" id="messageInput" placeholder="描述你想要制作的视频..." />
+            <button onclick="sendMessage()">发送</button>
+            <button onclick="resetChat()">重置</button>
+        </div>
+        <div id="chatStatus"></div>
+    </div>
+    
+    <!-- 2. 项目列表和内容展示 -->
+    <div class="container">
+        <h2>📁 项目管理</h2>
+        <button onclick="loadProjects()">刷新项目列表</button>
+        <div id="projectsList"></div>
+    </div>
+    
+    <!-- 3. 故事大纲展示 -->
+    <div class="container">
+        <h2>📖 故事大纲</h2>
+        <div class="input-group">
+            <input type="text" id="projectIdInput" placeholder="输入项目ID..." />
+            <button onclick="loadProjectOutline()">加载大纲</button>
+        </div>
+        <div id="outlineContent"></div>
+    </div>
+    
+    <!-- 4. 角色图片展示 -->
+    <div class="container">
+        <h2>👥 角色图片</h2>
+        <button onclick="loadProjectCharacters()">加载角色</button>
+        <div id="charactersContent"></div>
+    </div>
+    
+    <!-- 5. 视频播放和下载 -->
+    <div class="container">
+        <h2>🎥 最终视频</h2>
+        <button onclick="loadProjectVideos()">加载视频</button>
+        <div id="videoContent"></div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8001/api';
+        let currentProjectId = '';
+        
+        // 工具函数
+        function showStatus(containerId, message, type = 'info') {
+            const container = document.getElementById(containerId);
+            container.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+        
+        function showLoading(containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = `<div class="status info"><span class="loading"></span> 加载中...</div>`;
+        }
+        
+        // 1. 聊天功能
+        async function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            if (!message) return;
+            
+            // 显示用户消息
+            addMessageToChat(message, 'user');
+            input.value = '';
+            
+            try {
+                showStatus('chatStatus', '正在处理消息...', 'info');
+                
+                const response = await fetch(`${API_BASE}/chat/send`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        message: message,
+                        is_first_message: false
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    addMessageToChat(data.response, 'bot');
+                    showStatus('chatStatus', `状态: ${data.status}`, 'success');
+                } else {
+                    showStatus('chatStatus', `错误: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                showStatus('chatStatus', `网络错误: ${error.message}`, 'error');
+            }
+        }
+        
+        function addMessageToChat(message, sender) {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.textContent = message;
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+        
+        async function resetChat() {
+            try {
+                const response = await fetch(`${API_BASE}/chat/reset`, {
+                    method: 'POST',
+                    credentials: 'include'
+                });
+                
+                if (response.ok) {
+                    document.getElementById('chatContainer').innerHTML = '';
+                    showStatus('chatStatus', '会话已重置', 'success');
+                }
+            } catch (error) {
+                showStatus('chatStatus', `重置失败: ${error.message}`, 'error');
+            }
+        }
+        
+        // 2. 项目管理
+        async function loadProjects() {
+            showLoading('projectsList');
+            
+            try {
+                const response = await fetch(`${API_BASE}/projects`);
+                const data = await response.json();
+                
+                if (response.ok) {
+                    displayProjects(data.projects);
+                } else {
+                    showStatus('projectsList', `加载项目失败: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                showStatus('projectsList', `网络错误: ${error.message}`, 'error');
+            }
+        }
+        
+        function displayProjects(projects) {
+            const container = document.getElementById('projectsList');
+            
+            if (projects.length === 0) {
+                container.innerHTML = '<p>暂无项目</p>';
+                return;
+            }
+            
+            let html = '';
+            projects.forEach(project => {
+                html += `
+                    <div class="project-card">
+                        <h4>${project.project_name || '未命名项目'}</h4>
+                        <p><strong>ID:</strong> ${project.project_id}</p>
+                        <p><strong>状态:</strong> ${project.status}</p>
+                        <p><strong>创建时间:</strong> ${new Date(project.created_at).toLocaleString()}</p>
+                        <button onclick="selectProject('${project.project_id}')">选择此项目</button>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        function selectProject(projectId) {
+            currentProjectId = projectId;
+            document.getElementById('projectIdInput').value = projectId;
+            showStatus('projectsList', `已选择项目: ${projectId}`, 'success');
+        }
+        
+        // 3. 故事大纲
+        async function loadProjectOutline() {
+            const projectId = document.getElementById('projectIdInput').value.trim() || currentProjectId;
+            if (!projectId) {
+                showStatus('outlineContent', '请输入项目ID', 'error');
+                return;
+            }
+            
+            showLoading('outlineContent');
+            
+            try {
+                const response = await fetch(`${API_BASE}/content/project/${projectId}/outline`);
+                const data = await response.json();
+                
+                if (response.ok) {
+                    displayOutline(data.outline);
+                } else {
+                    showStatus('outlineContent', `加载大纲失败: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                showStatus('outlineContent', `网络错误: ${error.message}`, 'error');
+            }
+        }
+        
+        function displayOutline(outline) {
+            const container = document.getElementById('outlineContent');
+            container.innerHTML = `
+                <div class="project-card">
+                    <h3>${outline.title}</h3>
+                    <h4>概要</h4>
+                    <p>${outline.summary}</p>
+                    <h4>详细叙述</h4>
+                    <p style="white-space: pre-wrap;">${outline.narrative_text}</p>
+                    <p><strong>预计时长:</strong> ${outline.estimated_duration} 秒</p>
+                </div>
+            `;
+        }
+        
+        // 4. 角色图片
+        async function loadProjectCharacters() {
+            const projectId = document.getElementById('projectIdInput').value.trim() || currentProjectId;
+            if (!projectId) {
+                showStatus('charactersContent', '请输入项目ID', 'error');
+                return;
+            }
+            
+            showLoading('charactersContent');
+            
+            try {
+                const response = await fetch(`${API_BASE}/content/project/${projectId}/characters`);
+                const data = await response.json();
+                
+                if (response.ok) {
+                    displayCharacters(data.characters);
+                } else {
+                    showStatus('charactersContent', `加载角色失败: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                showStatus('charactersContent', `网络错误: ${error.message}`, 'error');
+            }
+        }
+        
+        function displayCharacters(characters) {
+            const container = document.getElementById('charactersContent');
+            
+            let html = '';
+            characters.forEach(character => {
+                html += `
+                    <div class="character-card">
+                        ${character.image_url ? 
+                            `<img src="${character.image_url}" alt="${character.name}" class="character-image" />` :
+                            '<div class="character-image" style="background-color: #ddd; display: flex; align-items: center; justify-content: center;">无图片</div>'
+                        }
+                        <h4>${character.name}</h4>
+                        <p><strong>角色:</strong> ${character.role}</p>
+                        <p><strong>外观:</strong> ${character.appearance}</p>
+                        <p><strong>性格:</strong> ${character.personality}</p>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        // 5. 视频播放
+        async function loadProjectVideos() {
+            const projectId = document.getElementById('projectIdInput').value.trim() || currentProjectId;
+            if (!projectId) {
+                showStatus('videoContent', '请输入项目ID', 'error');
+                return;
+            }
+            
+            showLoading('videoContent');
+            
+            try {
+                const response = await fetch(`${API_BASE}/video/project/${projectId}/videos`);
+                const data = await response.json();
+                
+                if (response.ok) {
+                    displayVideos(projectId, data.video_info);
+                } else {
+                    showStatus('videoContent', `加载视频失败: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                showStatus('videoContent', `网络错误: ${error.message}`, 'error');
+            }
+        }
+        
+        function displayVideos(projectId, videoInfo) {
+            const container = document.getElementById('videoContent');
+            
+            if (!videoInfo.has_videos) {
+                container.innerHTML = '<p>该项目暂无视频</p>';
+                return;
+            }
+            
+            let html = `<h4>可用视频 (${videoInfo.video_count} 个)</h4>`;
+            
+            videoInfo.available_videos.forEach(video => {
+                html += `
+                    <div class="project-card">
+                        <h5>${video.type.toUpperCase()} 版本</h5>
+                        <p><strong>文件名:</strong> ${video.filename}</p>
+                        <p><strong>大小:</strong> ${video.size_mb} MB</p>
+                        
+                        <video class="video-player" controls>
+                            <source src="${API_BASE}${video.stream_url}" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                        
+                        <div style="margin-top: 10px;">
+                            <a href="${API_BASE}${video.download_url}" download>
+                                <button>下载视频</button>
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            // 添加缩略图
+            if (videoInfo.thumbnail_url) {
+                html += `
+                    <div class="project-card">
+                        <h5>视频缩略图</h5>
+                        <img src="${API_BASE}${videoInfo.thumbnail_url}" alt="视频缩略图" style="max-width: 300px; border-radius: 8px;" />
+                    </div>
+                `;
+            }
+            
+            container.innerHTML = html;
+        }
+        
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 绑定回车键发送消息
+            document.getElementById('messageInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            // 自动加载项目列表
+            loadProjects();
+        });
+    </script>
+</body>
+</html>

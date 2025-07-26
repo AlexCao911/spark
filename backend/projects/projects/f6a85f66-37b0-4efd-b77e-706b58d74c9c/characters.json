@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Alex",
+    "role": "main",
+    "appearance": "疯狂科学家",
+    "personality": "理性、好奇，对科技和未知充满探索欲",
+    "backstory": "在生物变异的背景下成长，经历了许多挑战和考验。作为疯狂科学家，他们的过去塑造了现在的性格和能力，为即将到来的冒险做好了准备。",
+    "motivations": [
+      "寻找真相",
+      "保护家人",
+      "实现梦想"
+    ],
+    "relationships": {},
+    "image_url": "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/da/20250726/1412f369/db82b21c-26f7-4c4d-b925-d2e9c5bebb73-1.png?Expires=1753598645&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=8lLxJ23NkHphunb7QMy2Bh8HlfI%3D",
+    "visual_consistency_tags": [
+      "cinematic"
+    ]
+  }
+]

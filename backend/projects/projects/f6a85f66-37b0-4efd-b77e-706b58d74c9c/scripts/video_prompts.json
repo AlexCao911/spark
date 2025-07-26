@@ -1,0 +1,50 @@
+[
+  {
+    "shot_id": 1,
+    "veo3_prompt": "狂乱科学家Alex站在幽绿冷光的地下实验室中，白大褂沾满污渍，眼神炽热凝视培养舱，特写镜头突出他颤抖的手指与竖瞳般的蓝光，青蓝色调营造禁忌氛围",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/da/20250726/1412f369/db82b21c-26f7-4c4d-b925-d2e9c5bebb73-1.png?Expires=1753598645&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=8lLxJ23NkHphunb7QMy2Bh8HlfI%3D"
+    ]
+  },
+  {
+    "shot_id": 2,
+    "veo3_prompt": "Alex将银白色液体注入胚胎样本，镜头从低角度仰拍他专注侧脸，背景金属墙反射微弱荧光，暖黄灯光与冷蓝环境形成心理张力对比",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/da/20250726/1412f369/db82b21c-26f7-4c4d-b925-d2e9c5bebb73-1.png?Expires=1753598645&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=8lLxJ23NkHphunb7QMy2Bh8HlfI%3D"
+    ]
+  },
+  {
+    "shot_id": 3,
+    "veo3_prompt": "培养舱玻璃如水波扩散裂痕，变异体皮肤流动如液态金属，慢动作拍摄其骨骼摩擦声与四肢伸展，俯视镜头强化非人感与压迫节奏",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/da/20250726/1412f369/db82b21c-26f7-4c4d-b925-d2e9c5bebb73-1.png?Expires=1753598645&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=8lLxJ23NkHphunb7QMy2Bh8HlfI%3D"
+    ]
+  },
+  {
+    "shot_id": 4,
+    "veo3_prompt": "新生命站起走向Alex，每步留下发光印记，中景跟随拍摄，幽蓝瞳孔映出人类惊恐表情，冷光聚焦于两者接触点，静默中充满哲学重量",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/da/20250726/1412f369/db82b21c-26f7-4c4d-b925-d2e9c5bebb73-1.png?Expires=1753598645&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=8lLxJ23NkHphunb7QMy2Bh8HlfI%3D"
+    ]
+  },
+  {
+    "shot_id": 5,
+    "veo3_prompt": "它轻触Alex脸颊，近景捕捉他眼中恐惧与震撼交织，鳞片状面部与人类五官错位融合，柔和逆光勾勒轮廓，凸显“被理解”的颤栗瞬间",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/da/20250726/1412f369/db82b21c-26f7-4c4d-b925-d2e9c5bebb73-1.png?Expires=1753598645&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=8lLxJ23NkHphunb7QMy2Bh8HlfI%3D"
+    ]
+  },
+  {
+    "shot_id": 6,
+    "veo3_prompt": "实验室陷入纯黑寂静，新生命静静伫立中央，文字浮现：“We did not create life. We invited it.”，远景虚化人物，仅留呼吸声与轻微震动特效",
+    "duration": 5,
+    "character_reference_images": [
+      "https://dashscope-result-bj.oss-cn-beijing.aliyuncs.com/1d/da/20250726/1412f369/db82b21c-26f7-4c4d-b925-d2e9c5bebb73-1.png?Expires=1753598645&OSSAccessKeyId=LTAI5tQZd8AEcZX6KZV4G8qL&Signature=8lLxJ23NkHphunb7QMy2Bh8HlfI%3D"
+    ]
+  }
+]

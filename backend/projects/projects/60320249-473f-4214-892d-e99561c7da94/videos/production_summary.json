@@ -1,0 +1,82 @@
+{
+  "project_id": "60320249-473f-4214-892d-e99561c7da94",
+  "video_generation": {
+    "project_id": "60320249-473f-4214-892d-e99561c7da94",
+    "total_prompts": 4,
+    "successful_clips": 4,
+    "failed_clips": 0,
+    "clips": [
+      {
+        "clip_id": 1,
+        "shot_id": 1,
+        "file_path": "projects/projects/60320249-473f-4214-892d-e99561c7da94/videos/shot_001.mp4",
+        "duration": 5,
+        "status": "completed",
+        "error_message": null,
+        "retry_count": 0
+      },
+      {
+        "clip_id": 2,
+        "shot_id": 2,
+        "file_path": "projects/projects/60320249-473f-4214-892d-e99561c7da94/videos/shot_002.mp4",
+        "duration": 5,
+        "status": "completed",
+        "error_message": null,
+        "retry_count": 0
+      },
+      {
+        "clip_id": 3,
+        "shot_id": 3,
+        "file_path": "projects/projects/60320249-473f-4214-892d-e99561c7da94/videos/shot_003.mp4",
+        "duration": 5,
+        "status": "completed",
+        "error_message": null,
+        "retry_count": 0
+      },
+      {
+        "clip_id": 4,
+        "shot_id": 4,
+        "file_path": "projects/projects/60320249-473f-4214-892d-e99561c7da94/videos/shot_004.mp4",
+        "duration": 5,
+        "status": "completed",
+        "error_message": null,
+        "retry_count": 0
+      }
+    ],
+    "status": "completed",
+    "quota_issues": 0,
+    "generation_summary": {
+      "success_rate": "4/4",
+      "total_retries": 0
+    }
+  },
+  "video_assembly": {
+    "status": "completed",
+    "outputs": {
+      "high_quality": "projects/projects/60320249-473f-4214-892d-e99561c7da94/final_videos/Generated Video_HQ.mp4",
+      "web_optimized": "projects/projects/60320249-473f-4214-892d-e99561c7da94/final_videos/Generated Video_Web.mp4",
+      "mobile": "projects/projects/60320249-473f-4214-892d-e99561c7da94/final_videos/Generated Video_Mobile.mp4"
+    },
+    "thumbnail": "projects/projects/60320249-473f-4214-892d-e99561c7da94/final_videos/Generated Video_thumbnail.jpg",
+    "metadata": {
+      "total_clips": 4,
+      "method": "ffmpeg"
+    },
+    "project_id": "60320249-473f-4214-892d-e99561c7da94",
+    "video_title": "Generated Video",
+    "target_duration": 60
+  },
+  "final_videos": {
+    "high_quality": "projects/projects/60320249-473f-4214-892d-e99561c7da94/final_videos/Generated Video_HQ.mp4",
+    "web_optimized": "projects/projects/60320249-473f-4214-892d-e99561c7da94/final_videos/Generated Video_Web.mp4",
+    "mobile": "projects/projects/60320249-473f-4214-892d-e99561c7da94/final_videos/Generated Video_Mobile.mp4"
+  },
+  "thumbnail": "projects/projects/60320249-473f-4214-892d-e99561c7da94/final_videos/Generated Video_thumbnail.jpg",
+  "metadata": {
+    "title": "Generated Video",
+    "total_clips": 4,
+    "successful_clips": 4,
+    "final_duration": 0
+  },
+  "status": "completed"
+}
